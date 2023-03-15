@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-
+Menu A = new Menu();
+A.snel();
 
 public class Program
 {
