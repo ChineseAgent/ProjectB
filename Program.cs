@@ -2,13 +2,14 @@ using System;
 using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-Menu A = new Menu();
-A.snel();
+
 
 public class Program
 {
     public static void Main()
     {
+        Menu A = new Menu();
+        A.snel();
         TableView.CreateTables();
         while (true)
         {
