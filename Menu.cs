@@ -24,6 +24,7 @@ public class Menu
         Wijn = new List<Item>();
     }
 
+    // Laad de data van de kaart in een lijst
     public void load_data()
     {
         StreamReader reader = new("Data.json");
@@ -32,6 +33,7 @@ public class Menu
         reader.Close();
     }
 
+    // Slaat de data van de kaart op in Data.json
     public void save_data()
     {
         StreamWriter writer = new("Data.json");
@@ -40,18 +42,21 @@ public class Menu
         writer.Close();
     }
 
+    // De format voor elke item in het menu
     public string WriteMessage(Item i)
     {
-        return $"{i.Name}    €{i.Price}" +
+        return $"{i.Name}    ${i.Price}" +
                 $"\n{i.Omschrijving}\n";
     }
 
+    // Functie om het menu te printen moet je aanpassen voor andere volgorde
     public void print_menu()
     {
         load_data();
         foreach (Menu item in listOfObjects)
         {
-            Console.WriteLine("\nVoorgerechten:\n");
+            Console.WriteLine("\nEten:");
+            Console.WriteLine("Voorgerechten:\n");
             foreach (Item i in item.Voorgerecht)
             {
                 Console.WriteLine(WriteMessage(i));
@@ -66,7 +71,8 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
-            Console.WriteLine("\nKoffie & Thee:\n");
+            Console.WriteLine("\nDrinken:");
+            Console.WriteLine("Koffie & Thee:\n");
             foreach (Item i in item.Koffie_Thee)
             {
                 Console.WriteLine(WriteMessage(i));
@@ -89,6 +95,7 @@ public class Menu
         }
     }
 
+    // Functie om item toe te voegen aan het menu
     public void add_item(Item item, int locatie)
     {
         load_data();
@@ -129,6 +136,7 @@ public class Menu
         save_data();
     }
 
+    // Functie om item te verwijderen uit het menu
     public void remove_item(string naam, int locatie)
     {
         load_data();
@@ -274,7 +282,29 @@ public class Menu
         }
     }
 
-    public void snel()
+    //De functie om makkelijk dingen aan te assen en desnoods voor de gebruiker/admin
+    public void Menu_Kaart()
+    {
+        bool admin = true;
+        while (true)
+            if (admin)
+            {
+                Console.WriteLine("\n1. De kaart weergeven" +
+                                    "\n2. De kaart bewerken (Admin Only)" +
+                                    "\n3. Terug");
+                int Awnser = Convert.ToInt32(Console.ReadLine());
+                if (Awnser == 1) {print_menu();}
+                else if (Awnser == 2) {Kaart_Bewerken();}
+                else if (Awnser == 3) {System.Environment.Exit(0);}
+                else 
+                {
+                    Console.WriteLine("Verkeerde input");
+                }
+            }
+    }
+
+    //Verder specificate voor Menu_Kaart()
+    public void Kaart_Bewerken()
     {
         while (true)
         {
@@ -286,39 +316,28 @@ public class Menu
                             "\n5. Fris & Sappen" +
                             "\n6. Bier op tap" +
                             "\n7. Wijn" +
-                            "\n8. Menu laten zien" +
-                            "\n9. Stoppen");
+                            "\n8. Terug");
             int Awnser = Convert.ToInt32(Console.ReadLine());
-            if ((Awnser < 1) && (Awnser > 9))
+            if ((Awnser < 8) && (Awnser > 0)) {Item_Bewerken(Awnser);}
+            else if (Awnser == 8) {Menu_Kaart();}
+            else 
             {
-                Console.WriteLine("Verkeerde input. verwacht (1 tot 9)");
-                snel();
+                Console.WriteLine("Verkeerde input");
             }
-            else if (Awnser == 8)
-            {
-                print_menu();
-                Thread.Sleep(5000);
-                snel();
-            }
-            else if (Awnser == 9)
-            {
-                return;
-            }
+        }
+    }
+
+    //Verder specificatie voor Kaart_Bewerken()
+    public void Item_Bewerken(int catagorie)
+    {
+        while (true)
+        {
             Console.WriteLine("\nWat wil je veranderen in deze catagorie." +
                             "\n1. Item toevoegen" +
                             "\n2. Item verwijderen" +
                             "\n3. Terug");
-            int Awnser1 = Convert.ToInt32(Console.ReadLine());
-            if ((Awnser1 < 1) && (Awnser1 > 3))
-            {
-                Console.WriteLine("Verkeerde input. verwacht (1 tot 3)");
-                snel();
-            }
-            else if (Awnser1 == 3)
-            {   
-                snel();
-            }
-            else if (Awnser1 == 1)
+            int Awnser = Convert.ToInt32(Console.ReadLine());
+            if (Awnser == 1)
             {
                 Console.WriteLine("\nHoe heet dit item:");
                 string? naam = Console.ReadLine();
@@ -331,12 +350,21 @@ public class Menu
                 Item _new = new Item(naam, prijs, omschrijving, allergieen);
                 add_item(_new, Awnser);
             }
-            else if (Awnser1 == 2)
+            else if (Awnser == 2)
             {
                 Console.WriteLine("\nHoe heet dit item:");
                 string? naam = Console.ReadLine();
-                remove_item(naam, Awnser);
+                remove_item(naam, Awnser);   
             }
+            else if (Awnser == 3) {Kaart_Bewerken();}
+            else 
+                        {
+                Console.WriteLine("Verkeerde input");
+            }
+
+
         }
     }
+    
 }
+
