@@ -1,1 +1,7 @@
-﻿Console.WriteLine("test123");
+﻿public class main
+{
+    public static void Main()
+    {
+        
+    }
+}
