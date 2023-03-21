@@ -1,4 +1,5 @@
 class Testings
 {
-    string Test = "testings";
+    string Test = "test123";
+    string Test2 = "test1234";
 }
