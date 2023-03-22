@@ -286,83 +286,234 @@ public class Menu
     public void Menu_Kaart()
     {
         bool admin = true;
-        while (true)
-            if (admin)
+
+        // Define the menu items
+        string[] menuItems = { "1. De kaart weergeven","2. De kaart bewerken (Admin Only)","3. Terug" };
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
+        {
+            // Print the menu
+            Console.Clear();
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                Console.WriteLine("\n1. De kaart weergeven" +
-                                    "\n2. De kaart bewerken (Admin Only)" +
-                                    "\n3. Terug");
-                int Awnser = Convert.ToInt32(Console.ReadLine());
-                if (Awnser == 1) {print_menu();}
-                else if (Awnser == 2) {Kaart_Bewerken();}
-                else if (Awnser == 3) {System.Environment.Exit(0);}
-                else 
+                if (i == selectedMenuItem)
                 {
-                    Console.WriteLine("Verkeerde input");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
                 }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
             }
+
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                            {
+                                print_menu();
+                                Thread.Sleep(2000);
+                                Menu_Kaart();
+                                break;
+                            }
+                        case 1:
+                            {
+                                Kaart_Bewerken();
+                                break;
+                            }
+                        case 2:
+                            {
+                                System.Environment.Exit(0);
+                                break;
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
+            }
+        }
     }
 
     //Verder specificate voor Menu_Kaart()
     public void Kaart_Bewerken()
     {
-        while (true)
+        // Define the menu items
+        string[] menuItems = { "Voorgerecht","Hoofdgerecht","Nagerecht","Koffie & Thee", "Fris & Sappen", "Bier van de tap", "Wijn","Terug"};
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
         {
-            Console.WriteLine("\nWelke catagorie wil je veranderen" +
-                            "\n1. Voorgerecht" +
-                            "\n2. Hoofdgerecht" +
-                            "\n3. Nagerecht" +
-                            "\n4. Koffie & Thee" +
-                            "\n5. Fris & Sappen" +
-                            "\n6. Bier op tap" +
-                            "\n7. Wijn" +
-                            "\n8. Terug");
-            int Awnser = Convert.ToInt32(Console.ReadLine());
-            if ((Awnser < 8) && (Awnser > 0)) {Item_Bewerken(Awnser);}
-            else if (Awnser == 8) {Menu_Kaart();}
-            else 
+            // Print the menu
+            Console.Clear();
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                Console.WriteLine("Verkeerde input");
+                if (i == selectedMenuItem)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
+            }
+
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            {
+                                Item_Bewerken(selectedMenuItem++, menuItems);
+                                break;
+                            }
+                        case 7:
+                            {
+                                Menu_Kaart();
+                                break;
+
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
             }
         }
     }
 
+
     //Verder specificatie voor Kaart_Bewerken()
-    public void Item_Bewerken(int catagorie)
+    public void Item_Bewerken(int catagorie, string[] menu)
     {
-        while (true)
+        int bewaren = catagorie + 1;
+
+        // Define the menu items
+        string[] menuItems = { "Item toevoegen","Item verwijderen","Terug" };
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
         {
-            Console.WriteLine("\nWat wil je veranderen in deze catagorie." +
-                            "\n1. Item toevoegen" +
-                            "\n2. Item verwijderen" +
-                            "\n3. Terug");
-            int Awnser = Convert.ToInt32(Console.ReadLine());
-            if (Awnser == 1)
+            // Print the menu
+            Console.Clear();
+            Console.WriteLine("Wat wil je veranderen in " + menu[catagorie]);
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                Console.WriteLine("\nHoe heet dit item:");
-                string? naam = Console.ReadLine();
-                Console.WriteLine("\nWat is de prijs in 0,00.");
-                double prijs = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("\nWat is de Omschrijving van dit Product?");
-                string? omschrijving = Console.ReadLine();
-                Console.WriteLine("\nIndien nodig schrijf allergieen anders type x.");
-                string? allergieen = Console.ReadLine();
-                Item _new = new Item(naam, prijs, omschrijving, allergieen);
-                add_item(_new, Awnser);
+                if (i == selectedMenuItem)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
             }
-            else if (Awnser == 2)
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
             {
-                Console.WriteLine("\nHoe heet dit item:");
-                string? naam = Console.ReadLine();
-                remove_item(naam, Awnser);   
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                            {
+                                Console.WriteLine("\nHoe heet dit item:");
+                                string? naam = Console.ReadLine();
+                                Console.WriteLine("\nWat is de prijs in 0,00.");
+                                double prijs = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine("\nWat is de Omschrijving van dit Product?");
+                                string? omschrijving = Console.ReadLine();
+                                Console.WriteLine("\nIndien nodig schrijf allergieen anders type x.");
+                                string? allergieen = Console.ReadLine();
+                                Item _new = new Item(naam, prijs, omschrijving, allergieen);
+                                add_item(_new, bewaren);
+                                Item_Bewerken(catagorie, menu);
+                                break;
+                            }
+                        case 1:
+                            {
+                                Console.WriteLine("\nHoe heet dit item:");
+                                string? naam = Console.ReadLine();
+                                remove_item(naam, bewaren);
+                                Item_Bewerken(catagorie, menu);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Kaart_Bewerken();
+                                break;
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
             }
-            else if (Awnser == 3) {Kaart_Bewerken();}
-            else 
-                        {
-                Console.WriteLine("Verkeerde input");
-            }
-
-
         }
     }
     
