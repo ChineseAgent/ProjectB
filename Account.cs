@@ -63,7 +63,7 @@ public static class Account
                 Console.WriteLine("Ongeldig telefoonnummer.");
                 continue;
             }
-            else
+            else  
             {
                 Console.WriteLine("Telefoonnummer succesvol ingevoerd.");
                 break;
@@ -71,9 +71,11 @@ public static class Account
         }
 
         //geboortedatum checken
-        Console.WriteLine("Voer uw geboortedatum in:");
-        Console.WriteLine("(DD-MM-YYYY)");
-        string? datum = "23-08-2005";
+
+
+        // Console.WriteLine("Voer uw geboortedatum in:");
+        // Console.WriteLine("(DD-MM-YYYY)");
+        // string? datum = "23-08-2005";
         // string? Datum = datum.Split('');
 
 
