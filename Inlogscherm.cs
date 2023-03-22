@@ -83,14 +83,94 @@ public static class Inlogscherm
                         Console.ReadKey(true);
                         return;
                     }
+
+
+
+
+
+
+
+                    // Reserveer
                     else if (selectedMenuItem == 2)
                     {
-                        // Reserveer
-                        Console.Clear();
-                        Console.WriteLine("Reserveer");
-                        Console.ReadKey(true);
-                        return;
+                        // Define the menu items
+                        string[] menuItems1 = { "Log in met bestaand account", "Registreer een account", "Ga door als gast" };
+
+                        // Set the default selection
+
+                        int selectedMenuItem1 = 0;
+
+                        while (true)
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("Reserveer");
+                            Console.ResetColor();
+                            for (int i = 0; i < menuItems1.Length; i++)
+                            {
+                                if (i == selectedMenuItem1)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.BackgroundColor = ConsoleColor.White;
+                                }
+                                Console.WriteLine(menuItems1[i]);
+                                Console.ResetColor();
+                            }
+
+                            // Read the user's input
+                            ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+                            // Respond to the input
+                            switch (keyInfo1.Key)
+                            {
+                                case ConsoleKey.UpArrow:
+                                    if (selectedMenuItem1 > 0)
+                                    {
+                                        selectedMenuItem1--;
+                                    }
+                                    break;
+                                case ConsoleKey.DownArrow:
+                                    if (selectedMenuItem1 < menuItems1.Length - 1)
+                                    {
+                                        selectedMenuItem1++;
+                                    }
+                                    break;
+                                case ConsoleKey.Enter:
+                                    // The user has selected an option
+                                    if (selectedMenuItem1 == 0)
+                                    {
+
+                                        Console.Clear();
+                                        Console.WriteLine("Informatie");
+                                        Console.ReadKey(true);
+                                        return;
+                                    }
+                                    else if (selectedMenuItem1 == 1)
+                                    {
+
+                                        Console.Clear();
+                                        Console.WriteLine("De kaart");
+                                        Console.ReadKey(true);
+                                        return;
+                                    }
+
+                                    else if (selectedMenuItem1 == 2)
+                                    {
+
+                                    }
+                                    return;
+                            }
+                        }
                     }
+
+
+
+
+
+
+
+
+
                     else if (selectedMenuItem == 3)
                     {
                         // Afsluiten
