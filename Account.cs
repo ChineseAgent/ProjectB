@@ -51,136 +51,24 @@ public static class Account
         string naam = Console.ReadLine();
         Console.WriteLine("Voor- en achternaam succesvol ingevoerd:");
 
-
+        string telefoonnummer;
         //Checken of telefoonnummer valid is
         Console.WriteLine("Voer uw telefoonnummer in:");
-        while(true)
+        while (true)
         {
-            Telefoonnummer = Convert.ToInt32(Console.ReadLine());
-
-            if (Telefoonnummer != 10)
+            //check if phone number is valid
+            telefoonnummer = Console.ReadLine();
+            if (telefoonnummer.Length != 10)
             {
-                Console.WriteLine("Ongeldig telefoonnummer.");
+                Console.WriteLine("Ongeldig telefoonnummer, probeer opnieuw.");
                 continue;
             }
-            else  
+            else
             {
-                Console.WriteLine("Telefoonnummer succesvol ingevoerd.");
                 break;
             }
         }
 
-        //geboortedatum checken
-
-
-        // Console.WriteLine("Voer uw geboortedatum in:");
-        // Console.WriteLine("(DD-MM-YYYY)");
-        // string? datum = "23-08-2005";
-        // string? Datum = datum.Split('');
-
-
-        // int yearint = int(year)
-        // int monthint = int(month)
-        // int dayint = int(day)
-
-        // #January
-        // if monthint == 1 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 2
-        // elif monthint == 1 and dayint > 31:
-        //         print("Input Format ERROR, February has only 28 days.")
-        //         exit()
-
-        // #February
-        // elif monthint == 2 and dayint == 28:
-        //         dayint = 1
-        //         monthint = 3
-        // elif monthint == 2 and dayint > 28:
-        //         print("Input Format ERROR, February has only 28 days.")
-        //         exit()
-
-        // #March
-        // elif monthint == 3 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 4
-        // elif monthint == 3 and dayint > 31:
-        //         print("Input Format ERROR, March has only 31 days.")
-        //         exit()
-
-        // #April
-        // elif monthint == 4 and dayint == 30:
-        //         dayint = 1
-        //         monthint = 5
-        // elif monthint == 4 and dayint > 30:
-        //         print("Input Format ERROR, April has only 30 days.")
-        //         exit()
-
-        // #May
-        // elif monthint == 5 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 6
-        // elif monthint == 5 and dayint > 31:
-        //         print("Input Format ERROR, May has only 31 days.")
-        //         exit()
-
-        // #June
-        // elif monthint == 6 and dayint == 30:
-        //         dayint = 1
-        //         monthint = 7
-        // elif monthint == 6 and dayint > 30:
-        //         print("Input Format ERROR, June has only 30 days.")
-        //         exit()
-
-        // #July
-        // elif monthint == 7 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 8
-        // elif monthint == 7 and dayint > 31:
-        //         print("Input Format ERROR, July has only 31 days.")
-        //         exit()
-
-        // #August
-        // elif monthint == 8 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 9
-        // elif monthint == 8 and dayint > 31:
-        //         print("Input Format ERROR, August has only 31 days.")
-        //         exit()
-
-        // #September
-        // elif monthint == 9 and dayint == 30:
-        //         dayint = 1
-        //         monthint = 10
-        // elif monthint == 9 and dayint > 30:
-        //         print("Input Format ERROR, September has only 30 days.")
-        //         exit()
-
-        // #October
-        // elif monthint == 10 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 11
-        // elif monthint == 10 and dayint > 31:
-        //         print("Input Format ERROR, October has only 31 days.")
-        //         exit()
-
-        // #November
-        // elif monthint == 11 and dayint == 30:
-        //         dayint = 1
-        //         monthint = 12
-        // elif monthint == 11 and dayint > 30:
-        //         print("Input Format ERROR, November has only 30 days.")
-        //         exit()
-
-        // #December
-        // elif monthint == 12 and dayint == 31:
-        //         dayint = 1
-        //         monthint = 1
-        //         yearint += 1
-        // elif monthint == 12 and dayint > 31:
-        //         print("Input Format ERROR, December has only 31 days.")
-        //         exit()
-        // else:
-        //     dayint += 1
 
 
 
@@ -190,7 +78,7 @@ public static class Account
         string Plaatsnaam = Console.ReadLine();
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, naam, Telefoonnummer, Adres, Plaatsnaam);
+        User newUser = new User(email, password, naam, telefoonnummer, Adres, Plaatsnaam);
 
         // Add the new User object to the list of User objects
         userList.Add(newUser);
@@ -200,41 +88,55 @@ public static class Account
 
         // Write the JSON string to the JSON file
         File.WriteAllText("Accounts.JSON", jsonString);
+
+        Console.WriteLine("Account aangemaakt!");
+        Console.WriteLine("We leiden u nu terug naar de login pagina.");
+        Thread.Sleep(5000);
+        Console.Clear();
+        Inlogscherm.ReserveerLogin();
     }
 
 
     public static bool CheckLogin()
     {
+        List<User> userlist1 = new List<User>();
         string filePath = "Accounts.JSON";
         // Read the contents of the JSON file into a string
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
 
         {
             string jsonFromFile = File.ReadAllText(filePath);
-            List<User> userList = JsonSerializer.Deserialize<List<User>>(jsonFromFile);
+            userlist1 = JsonSerializer.Deserialize<List<User>>(jsonFromFile);
             // Ask the user for an email and password
         }
         else
         {
             // Create a new list of User objects
-            List<User> listusers = new List<User>();
+            userlist1 = new List<User>();
         }
 
         while (true)
         {
-            Console.WriteLine("Voer uw email in:");
-            string email = Console.ReadLine();
+            string password;
+            Console.WriteLine("Voer uw email/telefoonnummer in:");
+            string EmailOfNummer = Console.ReadLine();
 
 
             Console.WriteLine("Voer uw wachtwoord in:");
-            string password = Console.ReadLine();
+            password = Console.ReadLine();
             int correct = 0;
-            foreach (User user in userList)
+            foreach (User user in userlist1)
             {
-                if (user.Email == email && user.Password == password)
+                Console.WriteLine(user.Email);
+                Console.WriteLine(user.Password);
+                // turn user.Telefoonnummer to string
+                string Telefoonnummer = Convert.ToString(user.Telefoonnummer);
+                if ((user.Email == EmailOfNummer) || Telefoonnummer == EmailOfNummer && user.Password == password)
                 {
                     Console.WriteLine("Login successvol!");
+                    Thread.Sleep(5000);
                     correct = 1;
+
                 }
                 else
                 {
@@ -250,10 +152,84 @@ public static class Account
             }
             else
             {
-                Console.WriteLine("Gebruiker met deze email en wachtwoord bestaat niet, Probeer opnieuw.");
+                Account.ProbeerOpnieuwInTeLoggen();
                 continue;
             }
         }
 
+    }
+
+    public static void ProbeerOpnieuwInTeLoggen()
+    {
+        Console.Clear();
+        Console.WriteLine("Uw wachtwoord is onjuist.");
+        // Gebruik de pijltjes om te kiezen tussen terug naar het menu of opnieuw inloggen
+        Console.WriteLine("Kies een optie:");
+
+        {
+            string[] keuzes = { "Probeer opnieuw", "Ga terug" };
+
+            // Set the default selection
+
+            int selectedMenuItem1 = 0;
+
+            while (true)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Reserveer");
+                Console.ResetColor();
+                for (int i = 0; i < keuzes.Length; i++)
+                {
+                    if (i == selectedMenuItem1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                    }
+                    Console.WriteLine(keuzes[i]);
+                    Console.ResetColor();
+                }
+
+                // Read the user's input
+                ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+                // Respond to the input
+                switch (keyInfo1.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        if (selectedMenuItem1 > 0)
+                        {
+                            selectedMenuItem1--;
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (selectedMenuItem1 < keuzes.Length - 1)
+                        {
+                            selectedMenuItem1++;
+                        }
+                        break;
+                    case ConsoleKey.Enter:
+                        // The user has selected an option
+
+                        //Login met bestaand account
+                        if (selectedMenuItem1 == 0)
+                        {
+                            Console.Clear();
+                            Account.CheckLogin();
+                        }
+
+
+                        //Registreer een account
+                        else if (selectedMenuItem1 == 1)
+                        {
+
+                            Console.Clear();
+                            Inlogscherm.ReserveerLogin();
+                        }
+
+                        break;
+                }
+            }
+        }
     }
 }
