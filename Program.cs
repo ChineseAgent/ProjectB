@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+﻿public class main
+{
+    public static void Main()
+    {
+        
+    }
+}
+=======
 using System;
 using System.Threading.Tasks;
 using SendGrid;
@@ -29,3 +38,4 @@ public class Program
     }
 }
 
+>>>>>>> c4c811994b5074fbf78f923e753bfd15c63155e5
