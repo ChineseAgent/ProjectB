@@ -4,7 +4,7 @@ using System;
 
 public static class Account
 {
-
+    public static User CurrentUser = new User();
     public static List<User> userList = new List<User>();
     public static void Registreer()
     {
@@ -97,7 +97,7 @@ public static class Account
     }
 
 
-    public static bool CheckLogin()
+    public static bool Login()
     {
         List<User> userlist1 = new List<User>();
         string filePath = "Accounts.JSON";
@@ -134,6 +134,7 @@ public static class Account
                 if ((user.Email == EmailOfNummer) || Telefoonnummer == EmailOfNummer && user.Password == password)
                 {
                     Console.WriteLine("Login successvol!");
+                    CurrentUser = new User(user.Email, user.Password, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam);
                     Thread.Sleep(5000);
                     correct = 1;
 
@@ -215,7 +216,7 @@ public static class Account
                         if (selectedMenuItem1 == 0)
                         {
                             Console.Clear();
-                            Account.CheckLogin();
+                            Account.Login();
                         }
 
 

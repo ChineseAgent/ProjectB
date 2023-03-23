@@ -186,7 +186,7 @@ public static class Inlogscherm
                     {
 
                         Console.Clear();
-                        Account.CheckLogin();
+                        Account.Login();
                         Console.ReadKey(true);
                         return;
                     }
