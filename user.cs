@@ -1,7 +1,7 @@
 public class User
 {
     public string Email { get; set; }
-    public string Password { get; set; }
+    public string Wachtwoord { get; set; }
     public string Naam { get; set; }
 
     public string Telefoonnummer { get; set; }
@@ -10,10 +10,10 @@ public class User
     public string Plaatsnaam { get; set; }
 
 
-    public User(string email, string Wachtwoord, string naam, string telefoonnummer, string adres, string plaatsnaam)
+    public User(string email, string wachtwoord, string naam, string telefoonnummer, string adres, string plaatsnaam)
     {
         Email = email;
-        Wachtwoord = Wachtwoord;
+        Wachtwoord = wachtwoord;
         Naam = naam;
         Telefoonnummer = telefoonnummer;
         Adres = adres;

@@ -93,11 +93,11 @@ public static class Account
         Console.WriteLine("We leiden u nu terug naar de login pagina.");
         Thread.Sleep(5000);
         Console.Clear();
-        Inlogscherm.ReserveerLogin();
+        Inlogscherm.Loginscherm();
     }
 
 
-    public static bool Login()
+    public static void Login()
     {
         List<User> userlist1 = new List<User>();
         string filePath = "Accounts.JSON";
@@ -117,6 +117,9 @@ public static class Account
 
         while (true)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Login");
+            Console.ResetColor();
             string password;
             Console.WriteLine("Voer uw email/telefoonnummer in:");
             string EmailOfNummer = Console.ReadLine();
@@ -127,16 +130,16 @@ public static class Account
             int correct = 0;
             foreach (User user in userlist1)
             {
-                Console.WriteLine(user.Email);
-                Console.WriteLine(user.Password);
                 // turn user.Telefoonnummer to string
                 string Telefoonnummer = Convert.ToString(user.Telefoonnummer);
-                if ((user.Email == EmailOfNummer) || Telefoonnummer == EmailOfNummer && user.Password == password)
+                if ((user.Email == EmailOfNummer || Telefoonnummer == EmailOfNummer) && user.Wachtwoord == password)
                 {
+                    Console.Clear();
                     Console.WriteLine("Login successvol!");
-                    CurrentUser = new User(user.Email, user.Password, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam);
-                    Thread.Sleep(5000);
-                    correct = 1;
+                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam);
+                    Console.WriteLine("Welkom terug " + CurrentUser.Naam + "!");
+                    Thread.Sleep(3000);
+                    break;
 
                 }
                 else
@@ -146,16 +149,18 @@ public static class Account
 
 
 
+
+
             }
-            if (correct == 1)
+            if (CurrentUser.Email == null)
             {
-                return true;
+                Account.ProbeerOpnieuwInTeLoggen();
             }
             else
             {
-                Account.ProbeerOpnieuwInTeLoggen();
-                continue;
+                break;
             }
+
         }
 
     }
@@ -178,7 +183,7 @@ public static class Account
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Reserveer");
+                Console.WriteLine("Login fout");
                 Console.ResetColor();
                 for (int i = 0; i < keuzes.Length; i++)
                 {
@@ -225,7 +230,7 @@ public static class Account
                         {
 
                             Console.Clear();
-                            Inlogscherm.ReserveerLogin();
+                            Inlogscherm.Loginscherm();
                         }
 
                         break;
@@ -233,4 +238,85 @@ public static class Account
             }
         }
     }
+
+    public static void MijnGegevens(User user)
+    {
+        // laat alle gegevens in een netjes formaat zien
+
+        string[] menuItems1 = { "Wijzig gegevens", "Ga terug" };
+
+        // Set the default selection
+
+        int selectedMenuItem1 = 0;
+
+        while (true)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ResetColor();
+            Console.WriteLine("Mijn gegevens");
+            Console.WriteLine("");
+            Console.WriteLine("Uw gegevens:");
+            Console.WriteLine("Naam: " + user.Naam);
+            Console.WriteLine("Email: " + user.Email);
+            Console.WriteLine("Telefoonnummer: " + user.Telefoonnummer);
+            Console.WriteLine("Adres: " + user.Adres);
+            Console.WriteLine("Plaatsnaam: " + user.Plaatsnaam);
+
+            for (int i = 0; i < menuItems1.Length; i++)
+            {
+                if (i == selectedMenuItem1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems1[i]);
+                Console.ResetColor();
+            }
+
+            // Read the user's input
+            ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo1.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem1 > 0)
+                    {
+                        selectedMenuItem1--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem1 < menuItems1.Length - 1)
+                    {
+                        selectedMenuItem1++;
+                    }
+                    break;
+
+
+                case ConsoleKey.Enter:
+                    // De gebruiker selecteert een optie
+
+                    //Wijzig gegevens
+                    if (selectedMenuItem1 == 0)
+                    {
+
+                        Console.Clear();
+                        Account.Login();
+                        return;
+                    }
+
+
+                    //Ga terug
+                    else if (selectedMenuItem1 == 1)
+                    {
+                        Inlogscherm.Keuzemenu();
+                        return;
+
+                    }
+                    break;
+            }
+        }
+    }
+
 }
