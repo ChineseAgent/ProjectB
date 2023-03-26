@@ -49,6 +49,8 @@ public class Menu
     public void print_menu()
     {
         load_data();
+
+        Console.WriteLine(DeKaart);
         foreach (Menu item in listOfObjects)
         {
             Console.WriteLine("\nVoorgerechten:\n");
@@ -145,7 +147,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Voorgerecht.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Voorgerecht.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -164,7 +166,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Hoofdgerecht.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Hoofdgerecht.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -183,7 +185,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Nagerecht.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Nagerecht.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -202,7 +204,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Koffie_Thee.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Koffie_Thee.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -221,7 +223,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Fris_Sappen.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Fris_Sappen.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -240,7 +242,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].BierVanDeTap.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].BierVanDeTap.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -259,7 +261,7 @@ public class Menu
                 }
                 if (Completed)
                 {
-                    listOfObjects[0].Wijn.RemoveAll(x =>x.Name == naam);
+                    listOfObjects[0].Wijn.RemoveAll(x => x.Name == naam);
                     save_data();
                     Console.WriteLine("Item is verwijderd");
                 }
@@ -315,7 +317,7 @@ public class Menu
                 snel();
             }
             else if (Awnser1 == 3)
-            {   
+            {
                 snel();
             }
             else if (Awnser1 == 1)
@@ -339,4 +341,19 @@ public class Menu
             }
         }
     }
+
+
+
+    // ASCI TEKSTEN
+
+    string DeKaart = @"  _____         _  __                _   
+ |  __ \       | |/ /               | |  
+ | |  | | ___  | ' / __ _  __ _ _ __| |_ 
+ | |  | |/ _ \ |  < / _` |/ _` | '__| __|
+ | |__| |  __/ | . \ (_| | (_| | |  | |_ 
+ |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
+                                         
+                                         ";
+
+
 }
