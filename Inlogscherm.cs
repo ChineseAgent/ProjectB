@@ -80,8 +80,9 @@ public static class Inlogscherm
                         {
                             // De kaart
                             Console.Clear();
-                            Console.WriteLine("De kaart");
-                            Console.ReadKey(true);
+                            Menu kaart = new Menu();
+                            kaart.print_menu();
+
                             return;
                         }
 
