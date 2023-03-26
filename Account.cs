@@ -147,19 +147,18 @@ public static class Account
                 {
                     continue;
                 }
-
-
-
-
-
             }
-            if (CurrentUser.Email == null)
+
+
+            if (CurrentUser.Email != null)
             {
-                Account.ProbeerOpnieuwInTeLoggen();
+                break;
             }
             else
             {
-                break;
+                Account.ProbeerOpnieuwInTeLoggen();
+
+
             }
 
         }
