@@ -76,9 +76,10 @@ public static class Account
         string Adres = Console.ReadLine();
         Console.WriteLine("Voer uw plaatsnaam in: (optioneel)");
         string Plaatsnaam = Console.ReadLine();
+        int CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, naam, telefoonnummer, Adres, Plaatsnaam);
+        User newUser = new User(email, password, naam, telefoonnummer, Adres, Plaatsnaam, CustomerId);
 
         // Add the new User object to the list of User objects
         userList.Add(newUser);
@@ -136,7 +137,7 @@ public static class Account
                 {
                     Console.Clear();
                     Console.WriteLine("Login successvol!");
-                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam);
+                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId);
                     Console.WriteLine("Welkom terug " + CurrentUser.Naam + "!");
                     Thread.Sleep(3000);
                     break;

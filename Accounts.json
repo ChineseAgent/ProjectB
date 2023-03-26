@@ -1,1 +1,20 @@
-[{"Email":"test@test.nl","Wachtwoord":"test","Naam":"Test van Test","Telefoonnummer":"0641011004","Adres":"","Plaatsnaam":""},{"Email":"klaas@klaas.nl","Wachtwoord":"klaas","Naam":"klaas van rijn","Telefoonnummer":"0612345678","Adres":"Ferd. Huyckburg 12","Plaatsnaam":"Capelle aan den ijssel"}]
+[
+    {
+        "Email": "tymo@gmail.com",
+        "Wachtwoord": "tymo",
+        "Naam": "tymo van rijn",
+        "Telefoonnummer": "0641011004",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "CustomerId": 1
+    },
+    {
+        "Email": "piet@gmail.com",
+        "Wachtwoord": "piet",
+        "Naam": "piet heijn",
+        "Telefoonnummer": "0651011005",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "CustomerId": 2
+    }
+]
