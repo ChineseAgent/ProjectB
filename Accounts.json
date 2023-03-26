@@ -2,19 +2,12 @@
     {
         "Email": "tymo@gmail.com",
         "Wachtwoord": "tymo",
-        "Naam": "tymo van rijn",
+        "Voornaam": "tymo",
+        "TussenVoegsel": "van",
+        "Achternaam": "rijn",
         "Telefoonnummer": "0641011004",
         "Adres": "",
         "Plaatsnaam": "",
         "CustomerId": 1
-    },
-    {
-        "Email": "piet@gmail.com",
-        "Wachtwoord": "piet",
-        "Naam": "piet heijn",
-        "Telefoonnummer": "0651011005",
-        "Adres": "",
-        "Plaatsnaam": "",
-        "CustomerId": 2
     }
 ]

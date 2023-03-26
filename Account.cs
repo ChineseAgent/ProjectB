@@ -47,9 +47,12 @@ public static class Account
         Console.WriteLine("Voer uw wachtwoord in:");
         string password = Console.ReadLine();
 
-        Console.WriteLine("Voer uw voor- en achternaam in:");
-        string naam = Console.ReadLine();
-        Console.WriteLine("Voor- en achternaam succesvol ingevoerd:");
+        Console.WriteLine("Voer uw voornaam in:");
+        string voornaam = Console.ReadLine();
+        Console.WriteLine("Voer uw tussenvoegsel in: (optioneel)");
+        string tussenvoegsel = Console.ReadLine();
+        Console.WriteLine("Voer uw achternaam in:");
+        string achternaam = Console.ReadLine();
 
         string telefoonnummer;
         //Checken of telefoonnummer valid is
@@ -79,7 +82,7 @@ public static class Account
         int CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, naam, telefoonnummer, Adres, Plaatsnaam, CustomerId);
+        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId);
 
         // Add the new User object to the list of User objects
         userList.Add(newUser);
@@ -137,8 +140,8 @@ public static class Account
                 {
                     Console.Clear();
                     Console.WriteLine("Login successvol!");
-                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Naam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId);
-                    Console.WriteLine("Welkom terug " + CurrentUser.Naam + "!");
+                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId);
+                    Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");
                     Thread.Sleep(3000);
                     break;
 
@@ -257,7 +260,7 @@ public static class Account
             Console.WriteLine("Mijn gegevens");
             Console.WriteLine("");
             Console.WriteLine("Uw gegevens:");
-            Console.WriteLine("Naam: " + user.Naam);
+            Console.WriteLine("Naam: " + user.Voornaam + " " + user.TussenVoegsel + " " + user.Achternaam);
             Console.WriteLine("Email: " + user.Email);
             Console.WriteLine("Telefoonnummer: " + user.Telefoonnummer);
             Console.WriteLine("Adres: " + user.Adres);
