@@ -1,8 +1,7 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-
 
 public class Program
 {
@@ -28,4 +27,3 @@ public class Program
 
     }
 }
-
