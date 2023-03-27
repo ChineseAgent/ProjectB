@@ -78,7 +78,7 @@ public static class Account
         string? Adres = Console.ReadLine();
         Console.WriteLine("Voer uw plaatsnaam in: (optioneel)");
         string? Plaatsnaam = Console.ReadLine();
-        int? CustomerId = userList.Count + 1;
+        int CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
         User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
@@ -130,11 +130,10 @@ public static class Account
 
             Console.WriteLine("Voer uw wachtwoord in:");
             password = Console.ReadLine();
-            int correct = 0;
             foreach (User user in userlist1)
             {
                 // turn user.Telefoonnummer to string
-                string Telefoonnummer = Convert.ToString(user.Telefoonnummer);
+                string? Telefoonnummer = Convert.ToString(user.Telefoonnummer);
                 if ((user.Email == EmailOfNummer || Telefoonnummer == EmailOfNummer) && user.Wachtwoord == password)
                 {
                     Console.Clear();
