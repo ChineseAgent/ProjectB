@@ -102,11 +102,9 @@ public static class Inlogscherm
                             Inlogscherm.Loginscherm();
                             Inlogscherm.Keuzemenu();
                         }
-
-                        else if (selectedMenuItem == 3)
+                        else if (selectedMenuItem == 4)
                         {
                             // Afsluiten
-                            Console.Clear();
                             Console.Clear();
                             for (int b = 0; b < 1; b++)
                             {
