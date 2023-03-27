@@ -349,7 +349,7 @@ public class Menu
                             }
                         case 2:
                             {
-                                System.Environment.Exit(0);
+                                Inlogscherm.Keuzemenu();
                                 break;
                             }
                     }
@@ -428,12 +428,6 @@ public class Menu
                     }
                     Console.ReadKey(true);
                     return;
-                Console.WriteLine("Verkeerde input. verwacht (1 tot 3)");
-                snel();
-            }
-            else if (Awnser1 == 3)
-            {
-                snel();
             }
         }
     }
@@ -525,7 +519,7 @@ public class Menu
         }
     }
     
-}
+
 
 
 
@@ -533,13 +527,11 @@ public class Menu
     // ASCI TEKSTEN
 
     string DeKaart = @"  _____         _  __                _   
- |  __ \       | |/ /               | |  
- | |  | | ___  | ' / __ _  __ _ _ __| |_ 
- | |  | |/ _ \ |  < / _` |/ _` | '__| __|
- | |__| |  __/ | . \ (_| | (_| | |  | |_ 
- |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
-                                         
+        |  __ \       | |/ /               | |  
+        | |  | | ___  | ' / __ _  __ _ _ __| |_ 
+        | |  | |/ _ \ |  < / _` |/ _` | '__| __|
+        | |__| |  __/ | . \ (_| | (_| | |  | |_ 
+        |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
+                                            
                                          ";
-
-
 }
