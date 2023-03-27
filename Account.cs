@@ -82,7 +82,7 @@ public static class Account
         int CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId);
+        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
 
         // Add the new User object to the list of User objects
         userList.Add(newUser);
@@ -140,7 +140,7 @@ public static class Account
                 {
                     Console.Clear();
                     Console.WriteLine("Login successvol!");
-                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId);
+                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId, user.Admin);
                     Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");
                     Thread.Sleep(3000);
                     break;

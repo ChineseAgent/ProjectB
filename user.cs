@@ -11,9 +11,10 @@ public class User
     public string Adres { get; set; }
     public string Plaatsnaam { get; set; }
     public int CustomerId { get; set; }
+    public bool Admin { get; set; }
 
 
-    public User(string email, string wachtwoord, string voornaam, string tussenvoegel, string achternaam, string telefoonnummer, string adres, string plaatsnaam, int customerid)
+    public User(string email, string wachtwoord, string voornaam, string tussenvoegel, string achternaam, string telefoonnummer, string adres, string plaatsnaam, int customerid, bool admin)
     {
         Email = email;
         Wachtwoord = wachtwoord;
@@ -24,6 +25,7 @@ public class User
         Adres = adres;
         Plaatsnaam = plaatsnaam;
         CustomerId = customerid;
+        Admin = admin;
     }
 
     public User()
