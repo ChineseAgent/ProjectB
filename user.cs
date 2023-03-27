@@ -14,7 +14,7 @@ public class User
     public bool Admin { get; set; }
 
 
-    public User(string email, string wachtwoord, string voornaam, string tussenvoegel, string achternaam, string telefoonnummer, string adres, string plaatsnaam, int customerid, bool admin)
+    public User(string? email, string? wachtwoord, string? voornaam, string? tussenvoegel, string? achternaam, string? telefoonnummer, string? adres, string? plaatsnaam, int customerid, bool admin)
     {
         Email = email;
         Wachtwoord = wachtwoord;

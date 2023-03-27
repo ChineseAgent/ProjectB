@@ -18,7 +18,7 @@ public static class Inlogscherm
 
     public static void Keuzemenu()
     {
-        if (Account.CurrentUser.Email == null)
+        if (Account.CurrentUser != null && Account.CurrentUser.Email == null)
         {
 
 
@@ -225,7 +225,11 @@ public static class Inlogscherm
 
                         else if (selectedMenuItem == 4)
                         {
-                            Account.MijnGegevens(Account.CurrentUser);
+                            if (Account.CurrentUser != null)
+                            {
+                                Account.MijnGegevens(Account.CurrentUser);
+                            }
+
                         }
 
 

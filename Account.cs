@@ -31,16 +31,21 @@ public static class Account
             email = Console.ReadLine();
 
             // Check if the email is valid using a regular expression
-            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (!Regex.IsMatch(email, pattern))
+            string? pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (email != null)
             {
-                Console.WriteLine("Ongeldig email adres.");
-                continue;
+                if (!Regex.IsMatch(email, pattern))
+                {
+                    Console.WriteLine("Ongeldig email adres.");
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
             }
-            else
-            {
-                break;
-            }
+
         }
 
         Console.WriteLine("Voer uw wachtwoord in:");
@@ -60,7 +65,7 @@ public static class Account
         {
             //check if phone number is valid
             telefoonnummer = Console.ReadLine();
-            if (telefoonnummer.Length != 10)
+            if (string.IsNullOrEmpty(telefoonnummer) || telefoonnummer.Length != 10)
             {
                 Console.WriteLine("Ongeldig telefoonnummer, probeer opnieuw.");
                 continue;
@@ -78,15 +83,19 @@ public static class Account
         string? Adres = Console.ReadLine();
         Console.WriteLine("Voer uw plaatsnaam in: (optioneel)");
         string? Plaatsnaam = Console.ReadLine();
-        int CustomerId = userList.Count + 1;
+        int CustomerId = (userList != null ? userList.Count : 0) + 1;
 
         // Create a new User object with the entered email and password
         User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
+        if (userList != null)
+        {
+            userList.Add(newUser);
+        }
+        else
+        {
 
-        // Add the new User object to the list of User objects
-        userList.Add(newUser);
+        }
 
-        // Serialize the list of User objects into a JSON string
         string? jsonString = JsonSerializer.Serialize(userList);
 
         // Write the JSON string to the JSON file
@@ -130,37 +139,57 @@ public static class Account
 
             Console.WriteLine("Voer uw wachtwoord in:");
             password = Console.ReadLine();
-            foreach (User user in userlist1)
+            if (userlist1 != null)
             {
-                // turn user.Telefoonnummer to string
-                string? Telefoonnummer = Convert.ToString(user.Telefoonnummer);
-                if ((user.Email == EmailOfNummer || Telefoonnummer == EmailOfNummer) && user.Wachtwoord == password)
+                foreach (User user in userlist1)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Login successvol!");
-                    CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId, user.Admin);
-                    Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");
-                    Thread.Sleep(3000);
-                    break;
+                    // turn user.Telefoonnummer to string
+                    string? Telefoonnummer = Convert.ToString(user.Telefoonnummer);
+                    if ((user.Email == EmailOfNummer || Telefoonnummer == EmailOfNummer) && user.Wachtwoord == password)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Login successvol!");
+                        CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId, user.Admin);
+                        if (CurrentUser.Voornaam != null)
+                        {
+                            Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Welkom terug {CurrentUser.Achternaam} !");
+                        }
+                        Thread.Sleep(3000);
+                        break;
 
+                    }
+                    else
+                    {
+                        continue;
+                    }   // Code to be executed for each user
                 }
-                else
-                {
-                    continue;
-                }
-            }
-
-
-            if (CurrentUser.Email != null)
-            {
-                break;
             }
             else
             {
-                Account.ProbeerOpnieuwInTeLoggen();
-
+                // Handle case when userlist1 is null
+            }
+            {
 
             }
+
+            if (CurrentUser != null)
+            {
+                if (CurrentUser.Email != null)
+                {
+                    break;
+                }
+                else
+                {
+                    Account.ProbeerOpnieuwInTeLoggen();
+
+
+                }
+            }
+
 
         }
 
