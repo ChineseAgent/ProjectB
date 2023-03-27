@@ -81,7 +81,7 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.print_menu();
+                            kaart.Menu_Kaart();
 
                             return;
                         }
@@ -102,18 +102,6 @@ public static class Inlogscherm
                             Inlogscherm.Loginscherm();
                             Inlogscherm.Keuzemenu();
                         }
-
-
-
-
-
-
-
-
-
-
-
-
                         else if (selectedMenuItem == 4)
                         {
                             // Afsluiten
