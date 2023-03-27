@@ -4,25 +4,24 @@ using System;
 
 public static class Account
 {
-    public static User CurrentUser = new User();
-    public static List<User> userList = new List<User>();
+    public static User? CurrentUser = new User();
+    public static List<User>? userList = new List<User>();
     public static void Registreer()
     {
-        string email;
-        int Telefoonnummer;
-        string filePath = "Accounts.JSON";
+        string? email;
+        string? filePath = "Accounts.JSON";
         // Json file uitlezen naar een string
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
 
         {
-            string jsonFromFile = File.ReadAllText(filePath);
+            string? jsonFromFile = File.ReadAllText(filePath);
             userList = JsonSerializer.Deserialize<List<User>>(jsonFromFile);
         }
         else
         {
             // list creëren van user objecst
             Console.WriteLine("");
-            List<User> userList = new List<User>();
+            List<User>? userList = new List<User>();
         }
 
         // Email en ww vragen
@@ -45,16 +44,16 @@ public static class Account
         }
 
         Console.WriteLine("Voer uw wachtwoord in:");
-        string password = Console.ReadLine();
+        string? password = Console.ReadLine();
 
         Console.WriteLine("Voer uw voornaam in:");
-        string voornaam = Console.ReadLine();
+        string? voornaam = Console.ReadLine();
         Console.WriteLine("Voer uw tussenvoegsel in: (optioneel)");
-        string tussenvoegsel = Console.ReadLine();
+        string? tussenvoegsel = Console.ReadLine();
         Console.WriteLine("Voer uw achternaam in:");
-        string achternaam = Console.ReadLine();
+        string? achternaam = Console.ReadLine();
 
-        string telefoonnummer;
+        string? telefoonnummer;
         //Checken of telefoonnummer valid is
         Console.WriteLine("Voer uw telefoonnummer in:");
         while (true)
@@ -76,10 +75,10 @@ public static class Account
 
 
         Console.WriteLine("Voer uw adres in: (optioneel)");
-        string Adres = Console.ReadLine();
+        string? Adres = Console.ReadLine();
         Console.WriteLine("Voer uw plaatsnaam in: (optioneel)");
-        string Plaatsnaam = Console.ReadLine();
-        int CustomerId = userList.Count + 1;
+        string? Plaatsnaam = Console.ReadLine();
+        int? CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
         User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
@@ -88,7 +87,7 @@ public static class Account
         userList.Add(newUser);
 
         // Serialize the list of User objects into a JSON string
-        string jsonString = JsonSerializer.Serialize(userList);
+        string? jsonString = JsonSerializer.Serialize(userList);
 
         // Write the JSON string to the JSON file
         File.WriteAllText("Accounts.JSON", jsonString);
@@ -103,13 +102,13 @@ public static class Account
 
     public static void Login()
     {
-        List<User> userlist1 = new List<User>();
-        string filePath = "Accounts.JSON";
+        List<User>? userlist1 = new List<User>();
+        string? filePath = "Accounts.JSON";
         // Read the contents of the JSON file into a string
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
 
         {
-            string jsonFromFile = File.ReadAllText(filePath);
+            string? jsonFromFile = File.ReadAllText(filePath);
             userlist1 = JsonSerializer.Deserialize<List<User>>(jsonFromFile);
             // Ask the user for an email and password
         }
@@ -124,9 +123,9 @@ public static class Account
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Login");
             Console.ResetColor();
-            string password;
+            string? password;
             Console.WriteLine("Voer uw email/telefoonnummer in:");
-            string EmailOfNummer = Console.ReadLine();
+            string? EmailOfNummer = Console.ReadLine();
 
 
             Console.WriteLine("Voer uw wachtwoord in:");
