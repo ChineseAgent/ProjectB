@@ -92,7 +92,9 @@ public static class Inlogscherm
                         //Reserveer
                         else if (selectedMenuItem == 2)
                         {
-                            Console.WriteLine("Reserveer");
+                            MaakReservering.TijdSloten();
+                            MaakReservering.KiesTijd();
+                            Inlogscherm.Keuzemenu();
                         }
 
 
@@ -206,7 +208,9 @@ public static class Inlogscherm
                         // Reserveer
                         else if (selectedMenuItem == 2)
                         {
-                            Console.WriteLine("Reserveer");
+                            MaakReservering.TijdSloten();
+                            MaakReservering.KiesTijd();
+                            Inlogscherm.Keuzemenu();
                         }
 
 

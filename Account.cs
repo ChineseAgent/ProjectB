@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System;
 
+
 public static class Account
 {
     public static User? CurrentUser = new User();
@@ -159,7 +160,7 @@ public static class Account
                             Console.WriteLine($"Welkom terug {CurrentUser.Achternaam} !");
                         }
                         Thread.Sleep(3000);
-                        break;
+                        Inlogscherm.Keuzemenu();
 
                     }
                     else
@@ -176,18 +177,13 @@ public static class Account
 
             }
 
-            if (CurrentUser != null)
+            if (CheckOfIngelogd())
             {
-                if (CurrentUser.Email != null)
-                {
-                    break;
-                }
-                else
-                {
-                    Account.ProbeerOpnieuwInTeLoggen();
-
-
-                }
+                break;
+            }
+            else
+            {
+                ProbeerOpnieuwInTeLoggen();
             }
 
 
@@ -195,6 +191,23 @@ public static class Account
 
     }
 
+
+    public static bool CheckOfIngelogd()
+    {
+        Console.WriteLine(Account.CurrentUser.Email);
+        if (Account.CurrentUser.Email != null)
+        {
+            return true;
+        }
+        else if (Account.CurrentUser.Email == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     public static void ProbeerOpnieuwInTeLoggen()
     {
         Console.Clear();
@@ -273,7 +286,7 @@ public static class Account
     {
         // laat alle gegevens in een netjes formaat zien
 
-        string[] menuItems1 = { "Wijzig gegevens", "Ga terug" };
+        string[] menuItems1 = { "Wijzig gegevens", "Bekijk reserveringen", "Ga terug" };
 
         // Set the default selection
 
@@ -336,9 +349,15 @@ public static class Account
                         return;
                     }
 
+                    //Zie reserveringen
+                    else if (selectedMenuItem1 == 1)
+                    {
+                        ZieReserveringen();
+                    }
+
 
                     //Ga terug
-                    else if (selectedMenuItem1 == 1)
+                    else if (selectedMenuItem1 == 2)
                     {
                         Inlogscherm.Keuzemenu();
                         return;
@@ -348,5 +367,26 @@ public static class Account
             }
         }
     }
+    public static List<Reservering> ReserveringsLijst = new List<Reservering>();
+    public static void ZieReserveringen()
+    {
+        Console.Clear();
+        string? filePath = "Reserveringen.JSON";
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        {
+            string? jsonFromFile = File.ReadAllText(filePath);
+            ReserveringsLijst = JsonSerializer.Deserialize<List<Reservering>>(jsonFromFile);
+        }
+        foreach (Reservering Res in ReserveringsLijst)
+        {
+            if (Res.CustomerId == Account.CurrentUser.CustomerId)
+            {
+                Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+            }
+        }
+        Thread.Sleep(10000);
+    }
+
+
 
 }
