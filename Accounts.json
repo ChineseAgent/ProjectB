@@ -1,14 +1,1 @@
-[
-    {
-        "Email": "admin",
-        "Wachtwoord": "admin",
-        "Voornaam": "tymo",
-        "TussenVoegsel": "van",
-        "Achternaam": "rijn",
-        "Telefoonnummer": "0641011004",
-        "Adres": "",
-        "Plaatsnaam": "",
-        "CustomerId": 1,
-        "Admin": true
-    }
-]
+[{"Email":"admin","Wachtwoord":"admin","Voornaam":"tymo","TussenVoegsel":"van","Achternaam":"rijn","Telefoonnummer":"0641011004","Adres":"","Plaatsnaam":"","CustomerId":1,"Admin":true},{"Email":"tymovanrijn@gmail.com","Wachtwoord":"tymo","Voornaam":"tymo","TussenVoegsel":"van","Achternaam":"Rijn","Telefoonnummer":"0641011004","Adres":"","Plaatsnaam":"","CustomerId":2,"Admin":false}]
