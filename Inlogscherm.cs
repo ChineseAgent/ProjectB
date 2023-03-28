@@ -11,14 +11,9 @@ public static class Inlogscherm
             Console.WriteLine(line);
         }
     }
-
-
-
-
-
     public static void Keuzemenu()
     {
-        if (Account.CurrentUser.Email == null)
+        if (Account.CurrentUser != null && Account.CurrentUser.Email == null)
         {
 
 
@@ -81,13 +76,10 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.print_menu();
+                            kaart.Menu_Kaart();
 
                             return;
                         }
-
-
-
 
                         //Reserveer
                         else if (selectedMenuItem == 2)
@@ -102,8 +94,6 @@ public static class Inlogscherm
                             Inlogscherm.Loginscherm();
                             Inlogscherm.Keuzemenu();
                         }
-
-                          // Registreren
                         else if (selectedMenuItem == 4)
                         {
                             Console.Clear();
@@ -227,13 +217,12 @@ public static class Inlogscherm
 
                         else if (selectedMenuItem == 4)
                         {
-                            Account.MijnGegevens(Account.CurrentUser);
+                            if (Account.CurrentUser != null)
+                            {
+                                Account.MijnGegevens(Account.CurrentUser);
+                            }
+
                         }
-
-
-
-
-
                         else if (selectedMenuItem == 5)
                         {
                             // Afsluiten
