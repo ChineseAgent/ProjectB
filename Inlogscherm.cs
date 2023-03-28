@@ -11,11 +11,6 @@ public static class Inlogscherm
             Console.WriteLine(line);
         }
     }
-
-
-
-
-
     public static void Keuzemenu()
     {
         if (Account.CurrentUser != null && Account.CurrentUser.Email == null)
@@ -23,7 +18,7 @@ public static class Inlogscherm
 
 
             // Define the menu items
-            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Afsluiten" };
+            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Afsluiten" };
 
             // Set the default selection
             int selectedMenuItem = 0;
@@ -86,9 +81,6 @@ public static class Inlogscherm
                             return;
                         }
 
-
-
-
                         //Reserveer
                         else if (selectedMenuItem == 2)
                         {
@@ -105,6 +97,12 @@ public static class Inlogscherm
                             Inlogscherm.Keuzemenu();
                         }
                         else if (selectedMenuItem == 4)
+                        {
+                            Console.Clear();
+                            Account.Registreer();
+                        }
+
+                        else if (selectedMenuItem == 5)
                         {
                             // Afsluiten
                             Console.Clear();
@@ -199,12 +197,6 @@ public static class Inlogscherm
                             return;
                         }
 
-
-
-
-
-
-
                         // Reserveer
                         else if (selectedMenuItem == 2)
                         {
@@ -235,11 +227,6 @@ public static class Inlogscherm
                             }
 
                         }
-
-
-
-
-
                         else if (selectedMenuItem == 5)
                         {
                             // Afsluiten
@@ -269,29 +256,25 @@ public static class Inlogscherm
 
     public static void Loginscherm()
     {
-        string[] menuItems1 = { "Log in met bestaand account", "Registreer een account", "Ga door als gast", "Ga terug" };
+        string[] menuItems1 = {"Registreer een account", "Ga door als gast", "Ga terug" };
 
         // Set the default selection
 
         int selectedMenuItem1 = 0;
 
-        while (true)
-        {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Login");
             Console.ResetColor();
-            for (int i = 0; i < menuItems1.Length; i++)
-            {
-                if (i == selectedMenuItem1)
-                {
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.BackgroundColor = ConsoleColor.White;
-                }
-                Console.WriteLine(menuItems1[i]);
-                Console.ResetColor();
-            }
-
+            Console.Clear();
+            Account.Login();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine(" ");
+            Console.WriteLine(menuItems1);
+            Console.ResetColor();
+    
+        
             // Read the user's input
             ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
 
@@ -312,21 +295,21 @@ public static class Inlogscherm
                     break;
 
 
-                case ConsoleKey.Enter:
+                // case ConsoleKey.Enter:
                     // The user has selected an option
 
                     //Login met bestaand account
-                    if (selectedMenuItem1 == 0)
-                    {
+                    // if (selectedMenuItem1 == 0)
+                    // {
 
-                        Console.Clear();
-                        Account.Login();
-                        return;
-                    }
+                    //     Console.Clear();
+                    //     Account.Login();
+                    //     return;
+                    // }
 
-
+                    case ConsoleKey.Enter:
                     //Registreer een account
-                    else if (selectedMenuItem1 == 1)
+                    if (selectedMenuItem1 == 1)
                     {
 
                         Console.Clear();
@@ -355,5 +338,3 @@ public static class Inlogscherm
             }
         }
     }
-
-}

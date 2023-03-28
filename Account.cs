@@ -9,8 +9,11 @@ public static class Account
     public static List<User>? userList = new List<User>();
     public static void Registreer()
     {
-        string? email;
-        string? filePath = "Accounts.JSON";
+        string email;
+        int Telefoonnummer;
+        string filePath = "Accounts.JSON";
+
+
         // Json file uitlezen naar een string
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
 
@@ -80,11 +83,12 @@ public static class Account
 
 
 
+        Console.WriteLine("*Voer uw adres in: (straatnaam, huisnummer en )");
+        string Adres = Console.ReadLine();
+        Console.WriteLine("*Voer uw plaatsnaam in: (optioneel)");
+        string Plaatsnaam = Console.ReadLine();
+        int CustomerId = userList.Count + 1;
         Console.WriteLine("Voer uw adres in: (optioneel)");
-        string? Adres = Console.ReadLine();
-        Console.WriteLine("Voer uw plaatsnaam in: (optioneel)");
-        string? Plaatsnaam = Console.ReadLine();
-        int CustomerId = (userList != null ? userList.Count : 0) + 1;
 
         // Create a new User object with the entered email and password
         User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
@@ -103,10 +107,11 @@ public static class Account
         File.WriteAllText("Accounts.JSON", jsonString);
 
         Console.WriteLine("Account aangemaakt!");
-        Console.WriteLine("We leiden u nu terug naar de login pagina.");
+        Console.WriteLine("");
+        Console.WriteLine("We leiden u nu terug naar het hoofdmenu.");
         Thread.Sleep(5000);
         Console.Clear();
-        Inlogscherm.Loginscherm();
+        Inlogscherm.Keuzemenu();
     }
 
 
@@ -136,8 +141,6 @@ public static class Account
             string? password;
             Console.WriteLine("Voer uw email/telefoonnummer in:");
             string? EmailOfNummer = Console.ReadLine();
-
-
             Console.WriteLine("Voer uw wachtwoord in:");
             password = Console.ReadLine();
             if (userlist1 != null)
@@ -162,28 +165,31 @@ public static class Account
                         Thread.Sleep(3000);
                         Inlogscherm.Keuzemenu();
 
-                    }
-                    else
-                    {
-                        continue;
-                    }   // Code to be executed for each user
-                }
-            }
-            else
-            {
-                // Handle case when userlist1 is null
-            }
-            {
+                        break;
 
+
+                    }
+                }
             }
 
             if (CheckOfIngelogd())
             {
+
                 break;
             }
             else
             {
                 ProbeerOpnieuwInTeLoggen();
+
+                if (CurrentUser.Email != null)
+                {
+                    break;
+                }
+                else
+                {
+                    Account.ProbeerOpnieuwInTeLoggen();
+                }
+
             }
 
 
@@ -268,12 +274,12 @@ public static class Account
                         }
 
 
-                        //Registreer een account
+                        //Ga terug
                         else if (selectedMenuItem1 == 1)
                         {
 
                             Console.Clear();
-                            Inlogscherm.Loginscherm();
+                            Inlogscherm.Keuzemenu();
                         }
 
                         break;
