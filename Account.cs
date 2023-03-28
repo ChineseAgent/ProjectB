@@ -166,19 +166,7 @@ public static class Account
                         break;
 
                     }
-                    }
-                    else
-                    {
-                        continue;
-                    }   // Code to be executed for each user
                 }
-
-            else
-            {
-                // Handle case when userlist1 is null
-            }
-            {
-
             }
 
             if (CurrentUser != null)
