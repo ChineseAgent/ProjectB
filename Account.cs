@@ -11,6 +11,7 @@ public static class Account
     {
         string email;
         int Telefoonnummer;
+        string? password;
         string filePath = "Accounts.JSON";
 
 
@@ -53,7 +54,31 @@ public static class Account
         }
 
         Console.WriteLine("Voer uw wachtwoord in:");
-        string? password = Console.ReadLine();
+        // while(true)
+        // {
+            password = Console.ReadLine();
+
+        //     string? pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+\![^@\s]+\#[^@\s]+\$[^@\s]+\%[^@\s]+\^[^@\s]+\&[^@\s]+\*[^@\s]+\([^@\s]+\)[^@\s]+$";
+        //     // int intpassword = Convert.ToInt32(password);
+
+        //     if (password != null)
+        //     {
+        //         if (!Regex.IsMatch(password, pattern))
+        //         {
+        //             Console.WriteLine("Ongeldig wachtwoord.");
+        //             continue;
+        //         }
+        //         // else if(intpassword < 6)
+        //         // {
+        //         //     Console.WriteLine("Ongeldig wachtwoord.");
+        //         //     continue;
+        //         // }
+        //         else
+        //         {
+        //             break;
+        //         }
+        //     }
+        // }
 
         Console.WriteLine("Voer uw voornaam in:");
         string? voornaam = Console.ReadLine();
@@ -83,15 +108,17 @@ public static class Account
 
 
 
-        Console.WriteLine("*Voer uw adres in: (straatnaam, huisnummer en )");
+        Console.WriteLine("*Voer uw adres in: (straatnaam + huisnummer)");
         string Adres = Console.ReadLine();
-        Console.WriteLine("*Voer uw plaatsnaam in: (optioneel)");
+        Console.WriteLine("*Voer uw plaatsnaam in: ");
         string Plaatsnaam = Console.ReadLine();
         int CustomerId = userList.Count + 1;
-        Console.WriteLine("Voer uw adres in: (optioneel)");
+        Console.WriteLine("*Voer uw adres in: ");
+        Console.WriteLine("*Voer uw postcode in: ");
+        string Postcode = Console.ReadLine();
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, CustomerId, false);
+        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, Postcode, CustomerId, false);
         if (userList != null)
         {
             userList.Add(newUser);
@@ -153,7 +180,7 @@ public static class Account
                     {
                         Console.Clear();
                         Console.WriteLine("Login successvol!");
-                        CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId, user.Admin);
+                        CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.Postcode, user.CustomerId, user.Admin);
                         if (CurrentUser.Voornaam != null)
                         {
                             Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");
@@ -311,6 +338,8 @@ public static class Account
             Console.WriteLine("Telefoonnummer: " + user.Telefoonnummer);
             Console.WriteLine("Adres: " + user.Adres);
             Console.WriteLine("Plaatsnaam: " + user.Plaatsnaam);
+            Console.WriteLine("Postcode: " + user.Postcode);
+
 
             for (int i = 0; i < menuItems1.Length; i++)
             {
