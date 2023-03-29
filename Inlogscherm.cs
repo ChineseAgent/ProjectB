@@ -75,7 +75,17 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.Menu_Kaart();
+                            if (Account.CurrentUser.Admin)
+                            {
+                                kaart.Menu_Kaart();
+                            }
+                            else
+                            {
+                                kaart.print_menu();
+                                Inlogscherm.Keuzemenu();
+                            }
+
+
 
                             return;
                         }
@@ -190,8 +200,16 @@ public static class Inlogscherm
                         {
                             // De kaart
                             Console.Clear();
-                            Console.WriteLine("De kaart");
-                            Console.ReadKey(true);
+                            Menu kaart = new Menu();
+                            if (Account.CurrentUser.Admin)
+                            {
+                                kaart.Menu_Kaart();
+                            }
+                            else
+                            {
+                                kaart.print_menu();
+                                Inlogscherm.Keuzemenu();
+                            }
                             return;
                         }
 

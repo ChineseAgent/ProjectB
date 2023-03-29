@@ -1,1 +1,28 @@
-[{"Email":"tymo@rijn.com","Wachtwoord":"tymo","Voornaam":"tymo","TussenVoegsel":"tymo","Achternaam":"tymo","Telefoonnummer":"0641011004","Adres":"","Plaatsnaam":"","Postcode":"","CustomerId":1,"Admin":false}]
+[
+    {
+        "Email": "tymo@rijn.com",
+        "Wachtwoord": "tymo",
+        "Voornaam": "tymo",
+        "TussenVoegsel": "tymo",
+        "Achternaam": "tymo",
+        "Telefoonnummer": "0641011004",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "Postcode": "",
+        "CustomerId": 1,
+        "Admin": false
+    },
+    {
+        "Email": "admin@admin.com",
+        "Wachtwoord": "admin",
+        "Voornaam": "admin",
+        "TussenVoegsel": "",
+        "Achternaam": "admin",
+        "Telefoonnummer": "0612345678",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "Postcode": "",
+        "CustomerId": 2,
+        "Admin": true
+    }
+]
