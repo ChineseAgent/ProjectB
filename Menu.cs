@@ -45,7 +45,7 @@ public class Menu
     // De format voor elke item in het menu
     public string WriteMessage(Item i)
     {
-        return $"{i.Name}    ${i.Price}" +
+        return $"{i.Name}    ${i.Price}   {i.Vegan}" +
                 $"\n{i.Omschrijving}\n";
     }
 
@@ -53,7 +53,7 @@ public class Menu
     public void print_menu()
     {
         load_data();
-
+        Console.Clear();
         Console.WriteLine(DeKaart);
         foreach (Menu item in listOfObjects)
         {
@@ -94,6 +94,9 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
+            Console.WriteLine("\nLegenda:\n\u2713 = Vegan");
+            Console.WriteLine("\nPress any key to go back...");
+            Console.ReadKey();
         }
     }
 
@@ -338,7 +341,6 @@ public class Menu
                         case 0:
                             {
                                 print_menu();
-                                Thread.Sleep(2000);
                                 Menu_Kaart();
                                 break;
                             }
@@ -488,13 +490,67 @@ public class Menu
                             {
                                 Console.WriteLine("\nHoe heet dit item:");
                                 string? naam = Console.ReadLine();
+                                Console.Clear();
+
                                 Console.WriteLine("\nWat is de prijs in 0,00.");
                                 double prijs = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
                                 Console.WriteLine("\nWat is de Omschrijving van dit Product?");
                                 string? omschrijving = Console.ReadLine();
-                                Console.WriteLine("\nIndien nodig schrijf allergieen anders type x.");
-                                string? allergieen = Console.ReadLine();
-                                Item _new = new Item(naam, prijs, omschrijving, allergieen);
+                                Console.Clear();
+
+                                string vegan = "";
+                                string[] menuItems1 = { "Ja","Nee"};
+                                int selectedMenuItem1 = 0;
+                                bool done1 = false;
+                                while (!done1)
+                                {
+                                    // Print the menu
+                                    Console.Clear();
+                                    Console.WriteLine("Is het Vegan?");
+                                    for (int i = 0; i < menuItems1.Length; i++)
+                                    {
+                                        if (i == selectedMenuItem1)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Black;
+                                            Console.BackgroundColor = ConsoleColor.White;
+                                        }
+                                        Console.WriteLine(menuItems1[i]);
+                                        Console.ResetColor();
+                                    }
+                                    // Read the user's input
+                                    ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+                                    // Respond to the input
+                                    switch (keyInfo1.Key)
+                                    {
+                                        case ConsoleKey.UpArrow:
+                                            if (selectedMenuItem1 > 0)
+                                            {
+                                                selectedMenuItem1--;
+                                            }
+                                            break;
+                                        case ConsoleKey.DownArrow:
+                                            if (selectedMenuItem1 < menuItems1.Length - 1)
+                                            {
+                                                selectedMenuItem1++;
+                                            }
+                                            break;
+                                        case ConsoleKey.Enter:
+                                            switch (selectedMenuItem1)
+                                            {
+                                                case 0:
+                                                    vegan = "\u2713";
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            done1 = true;
+                                            break;
+                                    }
+                                }
+                                Item _new = new Item(naam, prijs, omschrijving, vegan);
                                 add_item(_new, bewaren);
                                 Item_Bewerken(catagorie, menu);
                                 break;
@@ -526,12 +582,12 @@ public class Menu
 
     // ASCI TEKSTEN
 
-    string DeKaart = @"  _____         _  __                _   
-        |  __ \       | |/ /               | |  
-        | |  | | ___  | ' / __ _  __ _ _ __| |_ 
-        | |  | |/ _ \ |  < / _` |/ _` | '__| __|
-        | |__| |  __/ | . \ (_| | (_| | |  | |_ 
-        |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
+    string DeKaart = @" _____         _  __                _   
+|  __ \       | |/ /               | |  
+|  | | | ___  | / __ _  __ _ _ __| |_ 
+| |  | |/ _ \ |  < / _` |/ _` | '__| __|
+| |__| |  __/ | . \ (_| | (_| | |  | |_ 
+|_____/ \___| |_|\_\__,_|\__,_|_|   \__|
                                             
                                          ";
 }
