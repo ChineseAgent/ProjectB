@@ -95,7 +95,7 @@ public class Menu
                 Console.WriteLine(WriteMessage(i));
             }
             Console.WriteLine("\nLegenda:\n\u2713 = Vegan");
-            Console.WriteLine("\nPress any key to go back...");
+            Console.WriteLine("\nDruk een toets in om verder te gaan...");
             Console.ReadKey();
         }
     }

@@ -145,8 +145,8 @@ public static class Account
 
         Console.WriteLine("Account aangemaakt!");
         Console.WriteLine("");
-        Console.WriteLine("We leiden u nu terug naar het hoofdmenu.");
-        Thread.Sleep(5000);
+        Console.WriteLine("\nDruk een toets in om verder te gaan...");
+        Console.ReadKey();
         Console.Clear();
         Inlogscherm.Keuzemenu();
     }
@@ -205,7 +205,8 @@ public static class Account
                         {
                             Console.WriteLine($"Welkom terug {CurrentUser.Achternaam} !");
                         }
-                        Thread.Sleep(3000);
+                        Console.WriteLine("\nDruk een toets in om verder te gaan...");
+                        Console.ReadKey();
                         Inlogscherm.Keuzemenu();
 
                         break;
