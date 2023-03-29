@@ -492,7 +492,7 @@ public class Menu
                                 string? naam = Console.ReadLine();
                                 Console.Clear();
 
-                                Console.WriteLine("\nWat is de prijs in 0.00.");
+                                Console.WriteLine("\nWat is de prijs in 0,00.");
                                 double prijs = Convert.ToDouble(Console.ReadLine());
                                 Console.Clear();
 
