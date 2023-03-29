@@ -30,6 +30,11 @@ public static class Inlogscherm
                 // Print the menu
                 Console.Clear();
                 Inlogscherm.Logo();
+                Console.WriteLine("Welkom bij restaurant de Rot! Hier kunt u genieten van de Rotterdamse keuken");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("Hoofdmenu>");
+                Console.ResetColor();
                 Console.WriteLine("");
                 Console.WriteLine("Maak uw keuze:");
                 for (int i = 0; i < menuItems.Length; i++)

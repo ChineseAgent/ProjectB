@@ -291,7 +291,7 @@ public class Menu
     public void Menu_Kaart()
     {
         bool admin = true;
-
+        Inlogscherm.Logo();
         // Define the menu items
         string[] menuItems = { "1. De kaart weergeven", "2. De kaart bewerken (Admin Only)", "3. Terug" };
 
@@ -364,6 +364,7 @@ public class Menu
     //Verder specificate voor Menu_Kaart()
     public void Kaart_Bewerken()
     {
+        Inlogscherm.Logo();
         // Define the menu items
         string[] menuItems = { "Voorgerecht", "Hoofdgerecht", "Nagerecht", "Koffie & Thee", "Fris & Sappen", "Bier van de tap", "Wijn", "Terug" };
 
@@ -438,6 +439,7 @@ public class Menu
     //Verder specificatie voor Kaart_Bewerken()
     public void Item_Bewerken(int catagorie, string[] menu)
     {
+        Inlogscherm.Logo();
         int bewaren = catagorie + 1;
 
         // Define the menu items

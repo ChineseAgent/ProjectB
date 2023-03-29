@@ -30,6 +30,13 @@ public static class Account
         }
 
         // Email en ww vragen
+        Inlogscherm.Logo();
+        Console.Write("Hoofdmenu>");
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.WriteLine("Registreer>");
+        Console.ResetColor();
+        Console.WriteLine("");
         Console.WriteLine("Voer uw email in:");
         while (true)
         {
@@ -56,7 +63,7 @@ public static class Account
         Console.WriteLine("Voer uw wachtwoord in:");
         // while(true)
         // {
-            password = Console.ReadLine();
+        password = Console.ReadLine();
 
         //     string? pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+\![^@\s]+\#[^@\s]+\$[^@\s]+\%[^@\s]+\^[^@\s]+\&[^@\s]+\*[^@\s]+\([^@\s]+\)[^@\s]+$";
         //     // int intpassword = Convert.ToInt32(password);
@@ -82,11 +89,14 @@ public static class Account
 
         Console.WriteLine("Voer uw voornaam in:");
         string? voornaam = Console.ReadLine();
+        voornaam = voornaam.ToLower();
+        voornaam = char.ToUpper(voornaam[0]) + voornaam.Substring(1);
         Console.WriteLine("Voer uw tussenvoegsel in: (optioneel)");
         string? tussenvoegsel = Console.ReadLine();
         Console.WriteLine("Voer uw achternaam in:");
         string? achternaam = Console.ReadLine();
-
+        achternaam = achternaam.ToLower();
+        achternaam = char.ToUpper(achternaam[0]) + achternaam.Substring(1);
         string? telefoonnummer;
         //Checken of telefoonnummer valid is
         Console.WriteLine("Voer uw telefoonnummer in:");
@@ -162,8 +172,12 @@ public static class Account
 
         while (true)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Login");
+            Inlogscherm.Logo();
+            Console.Write("Hoofdmenu>");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine("Login>");
+            Console.WriteLine("");
             Console.ResetColor();
             string? password;
             Console.WriteLine("Voer uw email/telefoonnummer in:");
@@ -178,7 +192,9 @@ public static class Account
                     string? Telefoonnummer = Convert.ToString(user.Telefoonnummer);
                     if ((user.Email == EmailOfNummer || Telefoonnummer == EmailOfNummer) && user.Wachtwoord == password)
                     {
+
                         Console.Clear();
+                        Inlogscherm.Logo();
                         Console.WriteLine("Login successvol!");
                         CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.Postcode, user.CustomerId, user.Admin);
                         if (CurrentUser.Voornaam != null)
@@ -227,7 +243,7 @@ public static class Account
 
     public static bool CheckOfIngelogd()
     {
-        Console.WriteLine(Account.CurrentUser.Email);
+
         if (Account.CurrentUser.Email != null)
         {
             return true;
@@ -243,10 +259,9 @@ public static class Account
     }
     public static void ProbeerOpnieuwInTeLoggen()
     {
+
         Console.Clear();
-        Console.WriteLine("Uw wachtwoord is onjuist.");
-        // Gebruik de pijltjes om te kiezen tussen terug naar het menu of opnieuw inloggen
-        Console.WriteLine("Kies een optie:");
+        Inlogscherm.Logo();
 
         {
             string[] keuzes = { "Probeer opnieuw", "Ga terug" };
@@ -258,6 +273,7 @@ public static class Account
             while (true)
             {
                 Console.Clear();
+                Inlogscherm.Logo();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Login fout");
                 Console.ResetColor();
@@ -328,6 +344,7 @@ public static class Account
         while (true)
         {
             Console.Clear();
+            Inlogscherm.Logo();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.ResetColor();
             Console.WriteLine("Mijn gegevens");
@@ -406,6 +423,7 @@ public static class Account
     public static void ZieReserveringen()
     {
         Console.Clear();
+        Inlogscherm.Logo();
         string? filePath = "Reserveringen.JSON";
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {

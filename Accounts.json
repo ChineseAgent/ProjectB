@@ -24,5 +24,31 @@
         "Postcode": "",
         "CustomerId": 2,
         "Admin": true
+    },
+    {
+        "Email": "tymo@f.cm",
+        "Wachtwoord": "xx",
+        "Voornaam": "xx",
+        "TussenVoegsel": "x",
+        "Achternaam": "x",
+        "Telefoonnummer": "0641011004",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "Postcode": "",
+        "CustomerId": 3,
+        "Admin": false
+    },
+    {
+        "Email": "tymo@tymo.nl",
+        "Wachtwoord": "tymo",
+        "Voornaam": "Tymo",
+        "TussenVoegsel": "van",
+        "Achternaam": "Rijn",
+        "Telefoonnummer": "0641011004",
+        "Adres": "",
+        "Plaatsnaam": "",
+        "Postcode": "",
+        "CustomerId": 4,
+        "Admin": false
     }
 ]
