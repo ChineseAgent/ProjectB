@@ -216,7 +216,14 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.Menu_Kaart();
+                            if (Account.CurrentUser.Admin = true)
+                            {
+                                kaart.Menu_Kaart();
+                            }
+                            else
+                            {
+                                kaart.print_menu();
+                            }
                             Inlogscherm.Keuzemenu();
                             return;
                         }

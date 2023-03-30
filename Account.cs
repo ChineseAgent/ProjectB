@@ -429,6 +429,7 @@ public static class Account
         {
             if (Res.CustomerId == Account.CurrentUser.CustomerId)
             {
+                Console.WriteLine("");
                 Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
                 reserveringen++;
             }
