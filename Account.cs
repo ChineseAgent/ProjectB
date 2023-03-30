@@ -36,19 +36,93 @@ public static class Account
         Console.WriteLine("Registreer>");
         Console.ResetColor();
         Console.WriteLine("");
-        Console.WriteLine("Voer uw email in:");
+        Console.WriteLine(@"                        * = Verplicht                          ");
+        Console.WriteLine(@"     Voer 'q' in om op elk moment terug te keren naar het hoofdmenu");
+
         while (true)
         {
+            Console.Write("\n*Voer uw email in: ");
             email = Console.ReadLine();
-
-            // Check if the email is valid using a regular expression
-            string? pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-
-            if (email != null)
+            if (email == "q")
             {
-                if (!Regex.IsMatch(email, pattern))
+                Inlogscherm.Keuzemenu();
+            }
+            else
+            {
+                // Check if the email is valid using a regular expression
+                string? pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+                if (email != null)
                 {
-                    Console.WriteLine("Ongeldig email adres.");
+                    if (!Regex.IsMatch(email, pattern))
+                    {
+                        Console.WriteLine("Ongeldig email adres.");
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+        }
+
+
+        Console.Write("\n*Voer uw wachtwoord in: ");
+        string? password = Console.ReadLine();
+
+        if (password == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+
+        Console.Write("\n*Voer uw voornaam in: ");
+        string? voornaam = Console.ReadLine();
+
+        if (voornaam == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+
+
+        voornaam = voornaam.ToLower();
+        voornaam = char.ToUpper(voornaam[0]) + voornaam.Substring(1);
+        Console.Write("\nVoer uw tussenvoegsel in: ");
+
+        string? tussenvoegsel = Console.ReadLine();
+
+        if (tussenvoegsel == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+
+        Console.Write("\n*Voer uw achternaam in: ");
+        string? achternaam = Console.ReadLine();
+        if (tussenvoegsel == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+        achternaam = achternaam.ToLower();
+        achternaam = char.ToUpper(achternaam[0]) + achternaam.Substring(1);
+        string? telefoonnummer;
+        //Checken of telefoonnummer valid is
+
+        while (true)
+        {
+
+            Console.Write("\n*Voer uw telefoonnummer in: ");
+            //check if phone number is valid
+            telefoonnummer = Console.ReadLine();
+            if (telefoonnummer == "q")
+            {
+                Inlogscherm.Keuzemenu();
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(telefoonnummer) || telefoonnummer.Length != 10)
+                {
+                    Console.WriteLine("Ongeldig telefoonnummer, probeer opnieuw.");
                     continue;
                 }
                 else
@@ -57,47 +131,27 @@ public static class Account
                 }
             }
 
-        }
 
-        Console.WriteLine("Voer uw wachtwoord in:");
-        string? password = Console.ReadLine();
-
-        Console.WriteLine("Voer uw voornaam in:");
-        string? voornaam = Console.ReadLine();
-        voornaam = voornaam.ToLower();
-        voornaam = char.ToUpper(voornaam[0]) + voornaam.Substring(1);
-        Console.WriteLine("Voer uw tussenvoegsel in: (optioneel)");
-        string? tussenvoegsel = Console.ReadLine();
-        Console.WriteLine("Voer uw achternaam in:");
-        string? achternaam = Console.ReadLine();
-
-        achternaam = achternaam.ToLower();
-        achternaam = char.ToUpper(achternaam[0]) + achternaam.Substring(1);
-        string? telefoonnummer;
-        //Checken of telefoonnummer valid is
-        Console.WriteLine("Voer uw telefoonnummer in:");
-        while (true)
-        {
-            //check if phone number is valid
-            telefoonnummer = Console.ReadLine();
-            if (string.IsNullOrEmpty(telefoonnummer) || telefoonnummer.Length != 10)
-            {
-                Console.WriteLine("Ongeldig telefoonnummer, probeer opnieuw.");
-                continue;
-            }
-            else
-            {
-                break;
-            }
         }
 
 
 
-
-        Console.WriteLine("*Voer uw adres in: (straatnaam, huisnummer en )");
+        Console.Write("\nVoer uw adres in: (straatnaam & huisnummer) ");
         string? Adres = Console.ReadLine();
-        Console.WriteLine("*Voer uw plaatsnaam in: (optioneel)");
+
+        if (Adres == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+
+        Console.Write("\nVoer uw plaatsnaam in: ");
         string? Plaatsnaam = Console.ReadLine();
+
+        if (Plaatsnaam == "q")
+        {
+            Inlogscherm.Keuzemenu();
+        }
+
         int CustomerId = userList.Count + 1;
 
         // Create a new User object with the entered email and password
@@ -150,12 +204,12 @@ public static class Account
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine("Login>");
-            Console.WriteLine("");
             Console.ResetColor();
             string? password;
-            Console.WriteLine("Voer uw email/telefoonnummer in:");
+            Console.Write("\nVoer uw email/telefoonnummer in: ");
             string? EmailOfNummer = Console.ReadLine();
-            Console.WriteLine("Voer uw wachtwoord in:");
+
+            Console.Write("\nVoer uw wachtwoord in: ");
             password = Console.ReadLine();
             if (userlist1 != null)
             {
@@ -245,7 +299,7 @@ public static class Account
         Console.WriteLine("Kies een optie:");
 
         {
-            string[] keuzes = { "Probeer opnieuw", "Ga terug" };
+            string[] keuzes = { "Probeer opnieuw", "Ga terug naar Hoofdmenu" };
 
             // Set the default selection
 
@@ -329,7 +383,7 @@ public static class Account
         {
             Console.Clear();
             Inlogscherm.Logo();
-            Console.Write("Keuzemenu>");
+            Console.Write("Hoofdmenu>");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
             Console.Write("Mijn gegevens>");
@@ -410,11 +464,10 @@ public static class Account
         Console.Clear();
         Inlogscherm.Logo();
         Console.WriteLine("");
-        Console.Write("Keuzemenu>");
-        Console.Write("Mijn gegevens>");
+        Console.Write("Hoofdmenu>");
         Console.ForegroundColor = ConsoleColor.Black;
         Console.BackgroundColor = ConsoleColor.White;
-        Console.Write("Mijn reserveringen");
+        Console.Write("Mijn reserveringen>");
         Console.ResetColor();
         Console.WriteLine("");
 
@@ -448,12 +501,103 @@ public static class Account
         }
         else
         {
+            string filePath = "Reserveringen.json";
+            Console.WriteLine("");
             Console.Write("Uw reserveringsnummer: ");
-            string? reserveringsnummer = Console.ReadLine();
+            string? reserveringsnummergast = Console.ReadLine();
+            {
+                string? jsonFromFile = File.ReadAllText(filePath);
+                ReserveringsLijst = JsonSerializer.Deserialize<List<Reservering>>(jsonFromFile);
+            }
+            foreach (Reservering Res in ReserveringsLijst)
+            {
+                if (Res.ReserveringsNummer == reserveringsnummergast)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+                    reserveringen++;
+                }
+            }
+            if (reserveringen == 0)
+            {
+                {
+                    string[] keuzes = { "Probeer opnieuw", "Ga terug naar Hoofdmenu" };
+
+                    // Set the default selection
+
+                    int selectedMenuItem1 = 0;
+
+                    while (true)
+                    {
+                        Console.Clear();
+                        Inlogscherm.Logo();
+                        Console.Write("Hoofdmenu>");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine("Mijn reserveringen>");
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                        Console.WriteLine("Er zijn geen reserveringen gevonden met dit reserveringsnummer.");
+                        Console.WriteLine("");
+                        for (int i = 0; i < keuzes.Length; i++)
+                        {
+                            if (i == selectedMenuItem1)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Black;
+                                Console.BackgroundColor = ConsoleColor.White;
+                            }
+                            Console.WriteLine(keuzes[i]);
+                            Console.ResetColor();
+                        }
+
+                        // Read the user's input
+                        ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+                        // Respond to the input
+                        switch (keyInfo1.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                if (selectedMenuItem1 > 0)
+                                {
+                                    selectedMenuItem1--;
+                                }
+                                break;
+                            case ConsoleKey.DownArrow:
+                                if (selectedMenuItem1 < keuzes.Length - 1)
+                                {
+                                    selectedMenuItem1++;
+                                }
+                                break;
+                            case ConsoleKey.Enter:
+                                // The user has selected an option
+
+                                //Probeer opnieuw in te vullen
+                                if (selectedMenuItem1 == 0)
+                                {
+                                    Console.Clear();
+                                    Account.ZieReserveringen();
+                                }
+                                //Ga terug naar hoofdmenu
+                                else if (selectedMenuItem1 == 1)
+                                {
+
+                                    Console.Clear();
+                                    Inlogscherm.Keuzemenu();
+                                }
+
+                                break;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Druk een toets in om terug te gaan naar hoofdmenu...");
+                Console.ReadKey();
+            }
+
         }
-
     }
-
-
 
 }

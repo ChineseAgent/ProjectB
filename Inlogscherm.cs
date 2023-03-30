@@ -250,7 +250,8 @@ public static class Inlogscherm
                             Account.CurrentUser = new User();
                             Console.Clear();
                             Console.WriteLine("U bent uitgelogd.");
-                            Thread.Sleep(3000);
+                            Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
+                            Console.ReadKey();
                             Inlogscherm.Keuzemenu();
                             return;
                         }
