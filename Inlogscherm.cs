@@ -82,7 +82,8 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.Menu_Kaart();
+                            kaart.print_menu();
+                            Inlogscherm.Keuzemenu();
 
                             return;
                         }
@@ -131,6 +132,8 @@ public static class Inlogscherm
                 }
             }
         }
+
+        // INGELOG SCHERM 
         else
         {
             // Get the size of the console window
@@ -153,6 +156,20 @@ public static class Inlogscherm
 
                 Console.Clear();
                 Inlogscherm.Logo();
+                if (Account.CurrentUser.TussenVoegsel == "")
+                {
+                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.Achternaam} ");
+                }
+                else
+                {
+                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.TussenVoegsel} {Account.CurrentUser.Achternaam}");
+                }
+
+                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("Keuzemenu>");
+                Console.ResetColor();
                 Console.WriteLine("");
                 Console.WriteLine("Maak uw keuze:");
                 for (int i = 0; i < menuItems.Length; i++)
@@ -198,8 +215,9 @@ public static class Inlogscherm
                         {
                             // De kaart
                             Console.Clear();
-                            Console.WriteLine("De kaart");
-                            Console.ReadKey(true);
+                            Menu kaart = new Menu();
+                            kaart.Menu_Kaart();
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
 

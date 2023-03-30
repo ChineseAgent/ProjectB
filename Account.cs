@@ -167,6 +167,13 @@ public static class Account
                     {
                         Console.Clear();
                         Inlogscherm.Logo();
+                        Console.Write("Hoofdmenu>");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine("Login>");
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                        Console.WriteLine("");
                         Console.WriteLine("Login successvol!");
                         CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.CustomerId, user.Admin);
                         if (CurrentUser.Voornaam != null)
@@ -312,7 +319,7 @@ public static class Account
     {
         // laat alle gegevens in een netjes formaat zien
 
-        string[] menuItems1 = { "Wijzig gegevens", "Bekijk reserveringen", "Ga terug" };
+        string[] menuItems1 = { "Wijzig gegevens", "Mijn reserveringen", "Ga terug" };
 
         // Set the default selection
 
@@ -321,9 +328,12 @@ public static class Account
         while (true)
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Inlogscherm.Logo();
+            Console.Write("Keuzemenu>");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Write("Mijn gegevens>");
             Console.ResetColor();
-            Console.WriteLine("Mijn gegevens");
             Console.WriteLine("");
             Console.WriteLine("Uw gegevens:");
             Console.WriteLine("Naam: " + user.Voornaam + " " + user.TussenVoegsel + " " + user.Achternaam);
@@ -396,7 +406,19 @@ public static class Account
     public static List<Reservering> ReserveringsLijst = new List<Reservering>();
     public static void ZieReserveringen()
     {
+        int reserveringen = 0;
         Console.Clear();
+        Inlogscherm.Logo();
+        Console.WriteLine("");
+        Console.Write("Keuzemenu>");
+        Console.Write("Mijn gegevens>");
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.Write("Mijn reserveringen");
+        Console.ResetColor();
+        Console.WriteLine("");
+
+
         string? filePath = "Reserveringen.JSON";
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
@@ -408,9 +430,29 @@ public static class Account
             if (Res.CustomerId == Account.CurrentUser.CustomerId)
             {
                 Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+                reserveringen++;
             }
         }
-        Thread.Sleep(10000);
+        if (reserveringen == 0)
+        {
+            Console.WriteLine(@"{_}
+ |(|
+ |=|
+/   \
+|.--|
+||  |
+||  |    .    ' .
+|'--|  '     \~~~/
+'-=-' \~~~/   \_/
+       \_/     Y
+        Y     _|_
+       _|_");
+
+            Console.WriteLine("U heeft nog geen reserveringen gemaakt");
+        }
+        Console.WriteLine("");
+        Console.WriteLine("Druk een toets in om terug te gaan naar Mijn gegevens...");
+        Console.ReadKey();
     }
 
 
