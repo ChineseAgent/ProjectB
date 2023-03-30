@@ -419,41 +419,39 @@ public static class Account
         Console.WriteLine("");
 
 
-        string? filePath = "Reserveringen.JSON";
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        if (Account.CurrentUser.Email != null)
         {
-            string? jsonFromFile = File.ReadAllText(filePath);
-            ReserveringsLijst = JsonSerializer.Deserialize<List<Reservering>>(jsonFromFile);
-        }
-        foreach (Reservering Res in ReserveringsLijst)
-        {
-            if (Res.CustomerId == Account.CurrentUser.CustomerId)
-            {
-                Console.WriteLine("");
-                Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
-                reserveringen++;
-            }
-        }
-        if (reserveringen == 0)
-        {
-            Console.WriteLine(@"{_}
- |(|
- |=|
-/   \
-|.--|
-||  |
-||  |    .    ' .
-|'--|  '     \~~~/
-'-=-' \~~~/   \_/
-       \_/     Y
-        Y     _|_
-       _|_");
 
-            Console.WriteLine("U heeft nog geen reserveringen gemaakt");
+
+            string? filePath = "Reserveringen.JSON";
+            if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+            {
+                string? jsonFromFile = File.ReadAllText(filePath);
+                ReserveringsLijst = JsonSerializer.Deserialize<List<Reservering>>(jsonFromFile);
+            }
+            foreach (Reservering Res in ReserveringsLijst)
+            {
+                if (Res.CustomerId == Account.CurrentUser.CustomerId)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Gekozentijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+                    reserveringen++;
+                }
+            }
+            if (reserveringen == 0)
+            {
+                Console.WriteLine("U heeft nog geen reserveringen gemaakt");
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Druk een toets in om terug te gaan naar Mijn gegevens...");
+            Console.ReadKey();
         }
-        Console.WriteLine("");
-        Console.WriteLine("Druk een toets in om terug te gaan naar Mijn gegevens...");
-        Console.ReadKey();
+        else
+        {
+            Console.Write("Uw reserveringsnummer: ");
+            string? reserveringsnummer = Console.ReadLine();
+        }
+
     }
 
 

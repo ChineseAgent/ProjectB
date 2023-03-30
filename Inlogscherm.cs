@@ -18,7 +18,7 @@ public static class Inlogscherm
 
 
             // Define the menu items
-            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Afsluiten" };
+            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Mijn reservering", "Afsluiten" };
 
             // Set the default selection
             int selectedMenuItem = 0;
@@ -109,7 +109,13 @@ public static class Inlogscherm
                             Account.Registreer();
                         }
 
+
                         else if (selectedMenuItem == 5)
+                        {
+                            Account.ZieReserveringen();
+                        }
+
+                        else if (selectedMenuItem == 6)
                         {
                             // Afsluiten
                             Console.Clear();
