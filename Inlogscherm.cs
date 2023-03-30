@@ -73,8 +73,8 @@ public static class Inlogscherm
                         {
                             // Informatie
                             Console.Clear();
-                            Console.WriteLine("Informatie");
-                            Console.ReadKey(true);
+                            Informatie.LaatInformatieZien();
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
                         else if (selectedMenuItem == 1)
@@ -214,7 +214,7 @@ public static class Inlogscherm
                             // Informatie
                             Console.Clear();
                             Console.WriteLine("Informatie");
-                            Console.ReadKey(true);
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
                         else if (selectedMenuItem == 1)
