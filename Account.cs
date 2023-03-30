@@ -593,8 +593,9 @@ public static class Account
             }
             else
             {
-                Console.WriteLine("Druk een toets in om terug te gaan naar hoofdmenu...");
+                Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
                 Console.ReadKey();
+                Inlogscherm.Keuzemenu();
             }
 
         }
