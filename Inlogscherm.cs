@@ -217,12 +217,15 @@ public static class Inlogscherm
                             Inlogscherm.Keuzemenu();
                             return;
                         }
+
+
+
                         else if (selectedMenuItem == 1)
                         {
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            if (Account.CurrentUser.Admin = true)
+                            if (Account.CurrentUser.Admin)
                             {
                                 kaart.Menu_Kaart();
                             }
