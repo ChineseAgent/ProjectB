@@ -213,7 +213,7 @@ public static class Inlogscherm
                         {
                             // Informatie
                             Console.Clear();
-                            Console.WriteLine("Informatie");
+                            Informatie.LaatInformatieZien();
                             Inlogscherm.Keuzemenu();
                             return;
                         }
