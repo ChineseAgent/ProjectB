@@ -70,7 +70,7 @@ public static class Account
 
 
         Console.Write("\n*Voer uw wachtwoord in: ");
-        string? password = Console.ReadLine();
+        string? password = Password.HidePassword();
 
         if (password == "q")
         {
@@ -210,7 +210,7 @@ public static class Account
             string? EmailOfNummer = Console.ReadLine();
 
             Console.Write("\nVoer uw wachtwoord in: ");
-            password = Console.ReadLine();
+            password = Password.HidePassword();
             if (userlist1 != null)
             {
                 foreach (User user in userlist1)
