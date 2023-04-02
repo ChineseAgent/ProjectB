@@ -108,13 +108,13 @@ public static class Inlogscherm
                             Console.Clear();
                             for (int b = 0; b < 1; b++)
                             {
-                                Console.WriteLine("Aflsuiten.");
+                                Console.WriteLine("Afsluiten.");
                                 Thread.Sleep(500);
                                 Console.Clear();
-                                Console.WriteLine("Aflsuiten..");
+                                Console.WriteLine("Afsluiten..");
                                 Thread.Sleep(500);
                                 Console.Clear();
-                                Console.WriteLine("Aflsuiten...");
+                                Console.WriteLine("Afsluiten...");
                                 Thread.Sleep(500);
                                 Console.Clear();
                             }

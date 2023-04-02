@@ -45,7 +45,7 @@ public class Menu
     // De format voor elke item in het menu
     public string WriteMessage(Item i)
     {
-        return $"{i.Name}    ${i.Price}" +
+        return $"{i.Name}    ${(float)System.Math.Round(i.Price,2)}" +
                 $"\n{i.Omschrijving}\n";
     }
 

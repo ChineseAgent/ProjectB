@@ -106,7 +106,8 @@ public static class Account
         }
 
 
-
+        Console.WriteLine("*Voer uw geboortedatum in: ");
+        string geboortedatum = Console.ReadLine();
 
         Console.WriteLine("*Voer uw adres in: (straatnaam + huisnummer)");
         string Adres = Console.ReadLine();
@@ -118,7 +119,7 @@ public static class Account
         string Postcode = Console.ReadLine();
 
         // Create a new User object with the entered email and password
-        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, Adres, Plaatsnaam, Postcode, CustomerId, false);
+        User newUser = new User(email, password, voornaam, tussenvoegsel, achternaam, telefoonnummer, geboortedatum, Adres, Plaatsnaam, Postcode, CustomerId, false);
         if (userList != null)
         {
             userList.Add(newUser);
@@ -136,7 +137,7 @@ public static class Account
         Console.WriteLine("Account aangemaakt!");
         Console.WriteLine("");
         Console.WriteLine("We leiden u nu terug naar het hoofdmenu.");
-        Thread.Sleep(5000);
+        Thread.Sleep(3000);
         Console.Clear();
         Inlogscherm.Keuzemenu();
     }
@@ -180,7 +181,7 @@ public static class Account
                     {
                         Console.Clear();
                         Console.WriteLine("Login successvol!");
-                        CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Adres, user.Plaatsnaam, user.Postcode, user.CustomerId, user.Admin);
+                        CurrentUser = new User(user.Email, user.Wachtwoord, user.Voornaam, user.TussenVoegsel, user.Achternaam, user.Telefoonnummer, user.Geboortedatum, user.Adres, user.Plaatsnaam, user.Postcode, user.CustomerId, user.Admin);
                         if (CurrentUser.Voornaam != null)
                         {
                             Console.WriteLine($"Welkom terug {Char.ToUpper(CurrentUser.Voornaam[0])}. {CurrentUser.TussenVoegsel} {CurrentUser.Achternaam} !");

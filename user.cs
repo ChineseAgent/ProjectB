@@ -8,6 +8,8 @@ public class User
 
     public string? Telefoonnummer { get; set; }
 
+    public string? Geboortedatum { get; set; }
+
     public string? Adres { get; set; }
     public string? Plaatsnaam { get; set; }
 
@@ -17,7 +19,7 @@ public class User
     public bool Admin { get; set; }
 
 
-    public User(string? email, string? wachtwoord, string? voornaam, string? tussenvoegel, string? achternaam, string? telefoonnummer, string? adres, string? plaatsnaam, string? postcode, int customerid, bool admin)
+    public User(string? email, string? wachtwoord, string? voornaam, string? tussenvoegel, string? achternaam, string? telefoonnummer, string? geboortedatum, string? adres, string? plaatsnaam, string? postcode, int customerid, bool admin)
     {
         Email = email;
         Wachtwoord = wachtwoord;
@@ -25,6 +27,7 @@ public class User
         TussenVoegsel = tussenvoegel;
         Achternaam = achternaam;
         Telefoonnummer = telefoonnummer;
+        Geboortedatum = geboortedatum;
         Adres = adres;
         Plaatsnaam = plaatsnaam;
         Postcode = postcode;
