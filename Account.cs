@@ -574,7 +574,7 @@ public static class Account
                     {
                         Console.Clear();
                         Inlogscherm.Logo();
-                        Console.Write("Hoofdmenu>");
+                        Console.Write("\nHoofdmenu>");
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.BackgroundColor = ConsoleColor.White;
                         Console.WriteLine("Mijn reserveringen>");
