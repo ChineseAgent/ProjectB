@@ -1,3 +1,5 @@
+using Reservering;
+
 public static class Inlogscherm
 {
 
@@ -92,7 +94,9 @@ public static class Inlogscherm
                         //Reserveer
                         else if (selectedMenuItem == 2)
                         {
-                            Console.WriteLine("Reserveer");
+                            Res.start_reservation();
+                            
+                            Inlogscherm.Keuzemenu();
                         }
 
 
@@ -219,7 +223,9 @@ public static class Inlogscherm
                         // Reserveer
                         else if (selectedMenuItem == 2)
                         {
-                            Console.WriteLine("Reserveer");
+                            Res.start_reservation();
+                            
+                            Inlogscherm.Keuzemenu();
                         }
 
 
