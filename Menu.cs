@@ -94,7 +94,7 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
-            Console.WriteLine($"\nLegenda:\n\u001b[32m \u2713\u001b[0m = Vegetarisch");
+            Console.WriteLine($"\nLegenda:\n\u001b[32m\u2713\u001b[0m = Vegetarisch");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ResetColor();
@@ -546,7 +546,7 @@ public class Menu
                                                 case 0:
                                                     Console.ForegroundColor = ConsoleColor.Green;
                                                     Console.BackgroundColor = ConsoleColor.Black;
-                                                    vegan = "\u2713";
+                                                    vegan = "\u001b[32m\u2713\u001b[0m";
                                                     Console.ResetColor();
                                                     break;
                                                 default:
