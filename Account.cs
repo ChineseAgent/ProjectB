@@ -176,21 +176,21 @@ public static class Account
         }
 
 
-        Console.WriteLine("*Voer uw plaatsnaam in: ");
+        Console.WriteLine("Voer uw plaatsnaam in: ");
         string Plaatsnaam = Console.ReadLine();
         if (Plaatsnaam == "q")
         {
             Inlogscherm.Keuzemenu();
         }
 
-        Console.WriteLine("*Voer uw Postcode in: ");
+        Console.WriteLine("Voer uw Postcode in: ");
         string Postcode = Console.ReadLine();
         if (Postcode == "q")
         {
             Inlogscherm.Keuzemenu();
         }
 
-        Console.WriteLine("*Voer uw geboortedatum in: ");
+        Console.WriteLine("Voer uw geboortedatum in: ");
         string geboortedatum = Console.ReadLine();
 
         int CustomerId = userList.Count + 1;
