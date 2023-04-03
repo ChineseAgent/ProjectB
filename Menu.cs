@@ -95,6 +95,8 @@ public class Menu
                 Console.WriteLine(WriteMessage(i));
             }
         }
+        Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
+        Console.ReadKey();
     }
 
     // Functie om item toe te voegen aan het menu
@@ -290,7 +292,7 @@ public class Menu
         bool admin = true;
 
         // Define the menu items
-        string[] menuItems = { "1. De kaart weergeven","2. De kaart bewerken (Admin Only)","3. Terug" };
+        string[] menuItems = { "1. De kaart weergeven", "2. De kaart bewerken (Admin Only)", "3. Terug" };
 
         // Set the default selection
         int selectedMenuItem = 0;
@@ -363,7 +365,7 @@ public class Menu
     public void Kaart_Bewerken()
     {
         // Define the menu items
-        string[] menuItems = { "Voorgerecht","Hoofdgerecht","Nagerecht","Koffie & Thee", "Fris & Sappen", "Bier van de tap", "Wijn","Terug"};
+        string[] menuItems = { "Voorgerecht", "Hoofdgerecht", "Nagerecht", "Koffie & Thee", "Fris & Sappen", "Bier van de tap", "Wijn", "Terug" };
 
         // Set the default selection
         int selectedMenuItem = 0;
@@ -439,7 +441,7 @@ public class Menu
         int bewaren = catagorie + 1;
 
         // Define the menu items
-        string[] menuItems = { "Item toevoegen","Item verwijderen","Terug" };
+        string[] menuItems = { "Item toevoegen", "Item verwijderen", "Terug" };
 
         // Set the default selection
         int selectedMenuItem = 0;
@@ -518,7 +520,7 @@ public class Menu
             }
         }
     }
-    
+
 
 
 

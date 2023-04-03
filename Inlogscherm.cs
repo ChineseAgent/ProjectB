@@ -18,7 +18,7 @@ public static class Inlogscherm
 
 
             // Define the menu items
-            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Afsluiten" };
+            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Mijn reservering", "Afsluiten" };
 
             // Set the default selection
             int selectedMenuItem = 0;
@@ -30,7 +30,13 @@ public static class Inlogscherm
                 // Print the menu
                 Console.Clear();
                 Inlogscherm.Logo();
+                Console.WriteLine("Welkom bij restaurant De Rot, De Rotterdamse keuken op zijn best!");
                 Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("Keuzemenu>");
+                Console.WriteLine("");
+                Console.ResetColor();
                 Console.WriteLine("Maak uw keuze:");
                 for (int i = 0; i < menuItems.Length; i++)
                 {
@@ -67,8 +73,8 @@ public static class Inlogscherm
                         {
                             // Informatie
                             Console.Clear();
-                            Console.WriteLine("Informatie");
-                            Console.ReadKey(true);
+                            Informatie.LaatInformatieZien();
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
                         else if (selectedMenuItem == 1)
@@ -76,7 +82,8 @@ public static class Inlogscherm
                             // De kaart
                             Console.Clear();
                             Menu kaart = new Menu();
-                            kaart.Menu_Kaart();
+                            kaart.print_menu();
+                            Inlogscherm.Keuzemenu();
 
                             return;
                         }
@@ -102,7 +109,13 @@ public static class Inlogscherm
                             Account.Registreer();
                         }
 
+
                         else if (selectedMenuItem == 5)
+                        {
+                            Account.ZieReserveringen();
+                        }
+
+                        else if (selectedMenuItem == 6)
                         {
                             // Afsluiten
                             Console.Clear();
@@ -125,6 +138,8 @@ public static class Inlogscherm
                 }
             }
         }
+
+        // INGELOG SCHERM 
         else
         {
             // Get the size of the console window
@@ -147,6 +162,20 @@ public static class Inlogscherm
 
                 Console.Clear();
                 Inlogscherm.Logo();
+                if (Account.CurrentUser.TussenVoegsel == "")
+                {
+                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.Achternaam} ");
+                }
+                else
+                {
+                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.TussenVoegsel} {Account.CurrentUser.Achternaam}");
+                }
+
+                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.WriteLine("Keuzemenu>");
+                Console.ResetColor();
                 Console.WriteLine("");
                 Console.WriteLine("Maak uw keuze:");
                 for (int i = 0; i < menuItems.Length; i++)
@@ -184,16 +213,27 @@ public static class Inlogscherm
                         {
                             // Informatie
                             Console.Clear();
-                            Console.WriteLine("Informatie");
-                            Console.ReadKey(true);
+                            Informatie.LaatInformatieZien();
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
+
+
+
                         else if (selectedMenuItem == 1)
                         {
                             // De kaart
                             Console.Clear();
-                            Console.WriteLine("De kaart");
-                            Console.ReadKey(true);
+                            Menu kaart = new Menu();
+                            if (Account.CurrentUser.Admin)
+                            {
+                                kaart.Menu_Kaart();
+                            }
+                            else
+                            {
+                                kaart.print_menu();
+                            }
+                            Inlogscherm.Keuzemenu();
                             return;
                         }
 
@@ -213,7 +253,8 @@ public static class Inlogscherm
                             Account.CurrentUser = new User();
                             Console.Clear();
                             Console.WriteLine("U bent uitgelogd.");
-                            Thread.Sleep(3000);
+                            Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
+                            Console.ReadKey();
                             Inlogscherm.Keuzemenu();
                             return;
                         }
@@ -256,85 +297,85 @@ public static class Inlogscherm
 
     public static void Loginscherm()
     {
-        string[] menuItems1 = {"Registreer een account", "Ga door als gast", "Ga terug" };
+        string[] menuItems1 = { "Registreer een account", "Ga door als gast", "Ga terug" };
 
         // Set the default selection
 
         int selectedMenuItem1 = 0;
 
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Login");
-            Console.ResetColor();
-            Console.Clear();
-            Account.Login();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.WriteLine(" ");
-            Console.WriteLine(menuItems1);
-            Console.ResetColor();
-    
-        
-            // Read the user's input
-            ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
-
-            // Respond to the input
-            switch (keyInfo1.Key)
-            {
-                case ConsoleKey.UpArrow:
-                    if (selectedMenuItem1 > 0)
-                    {
-                        selectedMenuItem1--;
-                    }
-                    break;
-                case ConsoleKey.DownArrow:
-                    if (selectedMenuItem1 < menuItems1.Length - 1)
-                    {
-                        selectedMenuItem1++;
-                    }
-                    break;
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Login");
+        Console.ResetColor();
+        Console.Clear();
+        Account.Login();
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.WriteLine(" ");
+        Console.WriteLine(menuItems1);
+        Console.ResetColor();
 
 
-                // case ConsoleKey.Enter:
-                    // The user has selected an option
+        // Read the user's input
+        ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
 
-                    //Login met bestaand account
-                    // if (selectedMenuItem1 == 0)
-                    // {
-
-                    //     Console.Clear();
-                    //     Account.Login();
-                    //     return;
-                    // }
-
-                    case ConsoleKey.Enter:
-                    //Registreer een account
-                    if (selectedMenuItem1 == 1)
-                    {
-
-                        Console.Clear();
-                        Account.Registreer();
-                        return;
-                    }
+        // Respond to the input
+        switch (keyInfo1.Key)
+        {
+            case ConsoleKey.UpArrow:
+                if (selectedMenuItem1 > 0)
+                {
+                    selectedMenuItem1--;
+                }
+                break;
+            case ConsoleKey.DownArrow:
+                if (selectedMenuItem1 < menuItems1.Length - 1)
+                {
+                    selectedMenuItem1++;
+                }
+                break;
 
 
+            // case ConsoleKey.Enter:
+            // The user has selected an option
 
-                    //Ga door als gast                  
-                    else if (selectedMenuItem1 == 2)
-                    {
-                        Inlogscherm.Keuzemenu();
-                        return;
-                    }
+            //Login met bestaand account
+            // if (selectedMenuItem1 == 0)
+            // {
+
+            //     Console.Clear();
+            //     Account.Login();
+            //     return;
+            // }
+
+            case ConsoleKey.Enter:
+                //Registreer een account
+                if (selectedMenuItem1 == 1)
+                {
+
+                    Console.Clear();
+                    Account.Registreer();
+                    return;
+                }
 
 
-                    //Ga terug
-                    else if (selectedMenuItem1 == 3)
-                    {
-                        Inlogscherm.Keuzemenu();
-                        return;
 
-                    }
-                    break;
-            }
+                //Ga door als gast                  
+                else if (selectedMenuItem1 == 2)
+                {
+                    Inlogscherm.Keuzemenu();
+                    return;
+                }
+
+
+                //Ga terug
+                else if (selectedMenuItem1 == 3)
+                {
+                    Inlogscherm.Keuzemenu();
+                    return;
+
+                }
+                break;
         }
     }
+}

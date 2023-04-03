@@ -12,7 +12,6 @@ public class User
 
     public string? Adres { get; set; }
     public string? Plaatsnaam { get; set; }
-
     public string? Postcode { get; set; }
 
     public int CustomerId { get; set; }
