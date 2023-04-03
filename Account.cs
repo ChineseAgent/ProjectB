@@ -58,7 +58,10 @@ public static class Account
                 {
                     if (!Regex.IsMatch(email, pattern))
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
                         Console.WriteLine("Ongeldig email adres.");
+                        Console.ResetColor();
                         continue;
                     }
                     else
@@ -90,7 +93,10 @@ public static class Account
             {
                 if (password != password2)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Black;
                     Console.WriteLine("\nWachtwoorden komen niet overeen");
+                    Console.ResetColor();
                     continue;
                 }
                 else
@@ -146,7 +152,10 @@ public static class Account
             {
                 if (string.IsNullOrEmpty(telefoonnummer) || telefoonnummer.Length != 10)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Black;
                     Console.WriteLine("Ongeldig telefoonnummer, probeer opnieuw.");
+                    Console.ResetColor();
                     continue;
                 }
                 else
