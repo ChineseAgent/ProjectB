@@ -12,7 +12,7 @@ public class Menu
     public List<Item> BierVanDeTap;
     public List<Item> Wijn;
 
-
+    // public string vegan = "✓";F
     public Menu()
     {
         Voorgerecht = new List<Item>();
@@ -94,11 +94,11 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
+            Console.WriteLine($"\nLegenda:\n\u001b[32m \u2713\u001b[0m = Vegetarisch");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("\nLegenda:\n\u2713 = Vegetarisch");
             Console.ResetColor();
-            Console.WriteLine("\nDruk een toets in om terug te gaan naar het hoofdmenu.");
+            Console.WriteLine("\nDruk een toets in om terug te gaan naar het hoofdmenu...");
             Console.ReadKey();
         }
     }
