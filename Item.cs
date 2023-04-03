@@ -4,12 +4,12 @@ public class Item
     public double Price;
 
     public string Omschrijving;
-    public string Allergieen;
-    public Item(string name, double price, string omschrijving, string allergieen)
+    public string Vegan;
+    public Item(string name, double price, string omschrijving, string vegan)
     {
         this.Name = name;
         this.Price = price;
         this.Omschrijving = omschrijving;
-        this.Allergieen = allergieen;
+        this.Vegan = vegan;
     }
 }
