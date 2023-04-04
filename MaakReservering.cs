@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
+
 /*public static class MaakReservering
+
+public static class MaakReservering
+
 {
     private static List<DateTime> tijdSloten = new List<DateTime>();
     private static int selectedIndex = 0;
@@ -85,6 +89,11 @@ using Newtonsoft.Json;
             Reservering NieuweReservering = new Reservering(Account.CurrentUser.CustomerId, Account.CurrentUser.Email, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, hoeveelheid, gekozenTijd.ToString("HH:mm"), ReserveringsCode());
             StuurNaarJson(NieuweReservering);
             SendEmail.SendReservationConfirmation(Account.CurrentUser.Email, "Geen idee welke dag nog", gekozenTijd.ToString("HH:mm"));
+
+
+            Console.WriteLine("Het maken van de reservering is gelukt! U wordt nu teruggebracht naar de beginpagina.");
+            Thread.Sleep(2000);
+
         }
 
     }
@@ -111,7 +120,10 @@ using Newtonsoft.Json;
 
         string updatedData = JsonConvert.SerializeObject(Reserveringen);
         File.WriteAllText(jsonFilePath, updatedData);
+
         Console.WriteLine("Het maken van de reservering is gelukt! U wordt nu teruggebracht naar de beginpagina.");
+
+
 
         Thread.Sleep(4000);
         Inlogscherm.Keuzemenu();
@@ -125,6 +137,7 @@ using Newtonsoft.Json;
         string reservationCode = prefix + reservationNumber.ToString();
         return reservationCode;
     }
+
 }*/
 using System;
 using System.Collections.Generic;
@@ -1051,4 +1064,6 @@ namespace Reservering
 
     }
 
+
+}
 

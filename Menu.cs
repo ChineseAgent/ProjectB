@@ -12,7 +12,7 @@ public class Menu
     public List<Item> BierVanDeTap;
     public List<Item> Wijn;
 
-
+    // public string vegan = "✓";F
     public Menu()
     {
         Voorgerecht = new List<Item>();
@@ -24,6 +24,7 @@ public class Menu
         Wijn = new List<Item>();
     }
 
+    // Laad de data van de kaart in een lijst
     public void load_data()
     {
         StreamReader reader = new("Data.json");
@@ -32,6 +33,7 @@ public class Menu
         reader.Close();
     }
 
+    // Slaat de data van de kaart op in Data.json
     public void save_data()
     {
         StreamWriter writer = new("Data.json");
@@ -40,20 +42,23 @@ public class Menu
         writer.Close();
     }
 
+    // De format voor elke item in het menu
     public string WriteMessage(Item i)
     {
-        return $"{i.Name}    €{i.Price}" +
+        return $"{i.Name}    ${i.Price}   {i.Vegan}" +
                 $"\n{i.Omschrijving}\n";
     }
 
+    // Functie om het menu te printen moet je aanpassen voor andere volgorde
     public void print_menu()
     {
         load_data();
-
+        Console.Clear();
         Console.WriteLine(DeKaart);
         foreach (Menu item in listOfObjects)
         {
-            Console.WriteLine("\nVoorgerechten:\n");
+            Console.WriteLine("\nEten:");
+            Console.WriteLine("Voorgerechten:\n");
             foreach (Item i in item.Voorgerecht)
             {
                 Console.WriteLine(WriteMessage(i));
@@ -68,7 +73,8 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
-            Console.WriteLine("\nKoffie & Thee:\n");
+            Console.WriteLine("\nDrinken:");
+            Console.WriteLine("Koffie & Thee:\n");
             foreach (Item i in item.Koffie_Thee)
             {
                 Console.WriteLine(WriteMessage(i));
@@ -88,9 +94,16 @@ public class Menu
             {
                 Console.WriteLine(WriteMessage(i));
             }
+            Console.WriteLine($"\nLegenda:\n\u001b[32m\u2713\u001b[0m = Vegetarisch");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ResetColor();
+            Console.WriteLine("\nDruk een toets in om terug te gaan naar het hoofdmenu...");
+            Console.ReadKey();
         }
     }
 
+    // Functie om item toe te voegen aan het menu
     public void add_item(Item item, int locatie)
     {
         load_data();
@@ -131,6 +144,7 @@ public class Menu
         save_data();
     }
 
+    // Functie om item te verwijderen uit het menu
     public void remove_item(string naam, int locatie)
     {
         load_data();
@@ -276,84 +290,310 @@ public class Menu
         }
     }
 
-    public void snel()
+    //De functie om makkelijk dingen aan te assen en desnoods voor de gebruiker/admin
+    public void Menu_Kaart()
     {
-        while (true)
+        bool admin = true;
+
+        // Define the menu items
+        string[] menuItems = { "1. De kaart weergeven", "2. De kaart bewerken (Admin Only)", "3. Terug" };
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
         {
-            Console.WriteLine("\nWelke catagorie wil je veranderen" +
-                            "\n1. Voorgerecht" +
-                            "\n2. Hoofdgerecht" +
-                            "\n3. Nagerecht" +
-                            "\n4. Koffie & Thee" +
-                            "\n5. Fris & Sappen" +
-                            "\n6. Bier op tap" +
-                            "\n7. Wijn" +
-                            "\n8. Menu laten zien" +
-                            "\n9. Stoppen");
-            int Awnser = Convert.ToInt32(Console.ReadLine());
-            if ((Awnser < 1) && (Awnser > 9))
+            // Print the menu
+            Console.Clear();
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                Console.WriteLine("Verkeerde input. verwacht (1 tot 9)");
-                snel();
+                if (i == selectedMenuItem)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
             }
-            else if (Awnser == 8)
+
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
             {
-                print_menu();
-                Thread.Sleep(5000);
-                snel();
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                            {
+                                print_menu();
+                                Menu_Kaart();
+                                break;
+                            }
+                        case 1:
+                            {
+                                Kaart_Bewerken();
+                                break;
+                            }
+                        case 2:
+                            {
+                                Inlogscherm.Keuzemenu();
+                                break;
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
             }
-            else if (Awnser == 9)
+        }
+    }
+
+    //Verder specificate voor Menu_Kaart()
+    public void Kaart_Bewerken()
+    {
+        // Define the menu items
+        string[] menuItems = { "Voorgerecht", "Hoofdgerecht", "Nagerecht", "Koffie & Thee", "Fris & Sappen", "Bier van de tap", "Wijn", "Terug" };
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
+        {
+            // Print the menu
+            Console.Clear();
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                return;
+                if (i == selectedMenuItem)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
             }
-            Console.WriteLine("\nWat wil je veranderen in deze catagorie." +
-                            "\n1. Item toevoegen" +
-                            "\n2. Item verwijderen" +
-                            "\n3. Terug");
-            int Awnser1 = Convert.ToInt32(Console.ReadLine());
-            if ((Awnser1 < 1) && (Awnser1 > 3))
+
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
             {
-                Console.WriteLine("Verkeerde input. verwacht (1 tot 3)");
-                snel();
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            {
+                                Item_Bewerken(selectedMenuItem++, menuItems);
+                                break;
+                            }
+                        case 7:
+                            {
+                                Menu_Kaart();
+                                break;
+
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
             }
-            else if (Awnser1 == 3)
+        }
+    }
+
+
+    //Verder specificatie voor Kaart_Bewerken()
+    public void Item_Bewerken(int catagorie, string[] menu)
+    {
+        int bewaren = catagorie + 1;
+
+        // Define the menu items
+        string[] menuItems = { "Item toevoegen", "Item verwijderen", "Terug" };
+
+        // Set the default selection
+        int selectedMenuItem = 0;
+
+        bool done = false;
+
+        // Loop until the user selects an option
+        while (!done)
+        {
+            // Print the menu
+            Console.Clear();
+            Console.WriteLine("Wat wil je veranderen in " + menu[catagorie]);
+            for (int i = 0; i < menuItems.Length; i++)
             {
-                snel();
+                if (i == selectedMenuItem)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine(menuItems[i]);
+                Console.ResetColor();
             }
-            else if (Awnser1 == 1)
+            // Read the user's input
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            // Respond to the input
+            switch (keyInfo.Key)
             {
-                Console.WriteLine("\nHoe heet dit item:");
-                string? naam = Console.ReadLine();
-                Console.WriteLine("\nWat is de prijs in 0,00.");
-                double prijs = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("\nWat is de Omschrijving van dit Product?");
-                string? omschrijving = Console.ReadLine();
-                Console.WriteLine("\nIndien nodig schrijf allergieen anders type x.");
-                string? allergieen = Console.ReadLine();
-                Item _new = new Item(naam, prijs, omschrijving, allergieen);
-                add_item(_new, Awnser);
-            }
-            else if (Awnser1 == 2)
-            {
-                Console.WriteLine("\nHoe heet dit item:");
-                string? naam = Console.ReadLine();
-                remove_item(naam, Awnser);
+                case ConsoleKey.UpArrow:
+                    if (selectedMenuItem > 0)
+                    {
+                        selectedMenuItem--;
+                    }
+                    break;
+                case ConsoleKey.DownArrow:
+                    if (selectedMenuItem < menuItems.Length - 1)
+                    {
+                        selectedMenuItem++;
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    done = true;
+                    switch (selectedMenuItem)
+                    {
+                        case 0:
+                            {
+                                Console.WriteLine("\nHoe heet dit item:");
+                                string? naam = Console.ReadLine();
+                                Console.Clear();
+
+                                Console.WriteLine("\nWat is de prijs in 0,00.");
+                                double prijs = Convert.ToDouble(Console.ReadLine());
+                                Console.Clear();
+
+                                Console.WriteLine("\nWat is de Omschrijving van dit Product?");
+                                string? omschrijving = Console.ReadLine();
+                                Console.Clear();
+
+                                string vegan = "";
+                                string[] menuItems1 = { "Ja", "Nee" };
+                                int selectedMenuItem1 = 0;
+                                bool done1 = false;
+                                while (!done1)
+                                {
+                                    // Print the menu
+                                    Console.Clear();
+                                    Console.WriteLine("Is het Vegan?");
+                                    for (int i = 0; i < menuItems1.Length; i++)
+                                    {
+                                        if (i == selectedMenuItem1)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Black;
+                                            Console.BackgroundColor = ConsoleColor.White;
+                                        }
+                                        Console.WriteLine(menuItems1[i]);
+                                        Console.ResetColor();
+                                    }
+                                    // Read the user's input
+                                    ConsoleKeyInfo keyInfo1 = Console.ReadKey(true);
+
+                                    // Respond to the input
+                                    switch (keyInfo1.Key)
+                                    {
+                                        case ConsoleKey.UpArrow:
+                                            if (selectedMenuItem1 > 0)
+                                            {
+                                                selectedMenuItem1--;
+                                            }
+                                            break;
+                                        case ConsoleKey.DownArrow:
+                                            if (selectedMenuItem1 < menuItems1.Length - 1)
+                                            {
+                                                selectedMenuItem1++;
+                                            }
+                                            break;
+                                        case ConsoleKey.Enter:
+                                            switch (selectedMenuItem1)
+                                            {
+                                                case 0:
+                                                    Console.ForegroundColor = ConsoleColor.Green;
+                                                    Console.BackgroundColor = ConsoleColor.Black;
+                                                    vegan = "\u001b[32m\u2713\u001b[0m";
+                                                    Console.ResetColor();
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            done1 = true;
+                                            break;
+                                    }
+                                }
+                                Item _new = new Item(naam, prijs, omschrijving, vegan);
+                                add_item(_new, bewaren);
+                                Item_Bewerken(catagorie, menu);
+                                break;
+                            }
+                        case 1:
+                            {
+                                Console.WriteLine("\nHoe heet dit item:");
+                                string? naam = Console.ReadLine();
+                                remove_item(naam, bewaren);
+                                Item_Bewerken(catagorie, menu);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Kaart_Bewerken();
+                                break;
+                            }
+                    }
+                    Console.ReadKey(true);
+                    return;
             }
         }
     }
 
 
 
+
+
+
     // ASCI TEKSTEN
 
-    string DeKaart = @"  _____         _  __                _   
- |  __ \       | |/ /               | |  
- | |  | | ___  | ' / __ _  __ _ _ __| |_ 
- | |  | |/ _ \ |  < / _` |/ _` | '__| __|
- | |__| |  __/ | . \ (_| | (_| | |  | |_ 
- |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
-                                         
+    string DeKaart = @" _____         _  __                _   
+|  __ \       | |/ /               | |  
+|  | | | ___  | / __ _  __ _ _ __| |_ 
+| |  | |/ _ \ |  < / _` |/ _` | '__| __|
+| |__| |  __/ | . \ (_| | (_| | |  | |_ 
+|_____/ \___| |_|\_\__,_|\__,_|_|   \__|
+                                            
                                          ";
-
-
 }
