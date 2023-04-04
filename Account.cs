@@ -500,6 +500,26 @@ public static class Account
             }
         }
     }
+
+    public static List<Reservation> ReserveringsLijst = new List<Reservation>();
+    public static void ZieReserveringen()
+    {
+        Console.Clear();
+        string? filePath = "Reserveringen.JSON";
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        {
+            string? jsonFromFile = File.ReadAllText(filePath);
+            ReserveringsLijst = JsonSerializer.Deserialize<List<Reservation>>(jsonFromFile);
+        }
+        foreach (Reservation Res in ReserveringsLijst)
+        {
+            if (Res.CustomerId == Account.CurrentUser.CustomerId)
+            {
+                Console.WriteLine($"U heeft een reservering voor {Res.Hoeveelheid} personen in het tijdslot van {Res.Tijd}.\nUw reserveringsnummer is {Res.ReserveringsNummer} Het is op de dag {Res.Dag}.");
+            }
+        }
+        Thread.Sleep(10000);
+
     public static List<Reservering> ReserveringsLijst = new List<Reservering>();
     public static void ZieReserveringen()
     {

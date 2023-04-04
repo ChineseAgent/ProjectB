@@ -1,3 +1,5 @@
+using Reservering;
+
 public static class Inlogscherm
 {
 
@@ -91,8 +93,13 @@ public static class Inlogscherm
                         //Reserveer
                         else if (selectedMenuItem == 2)
                         {
+
+                            Res.start_reservation();
+                            
+
                             MaakReservering.TijdSloten();
                             MaakReservering.KiesTijd();
+
                             Inlogscherm.Keuzemenu();
                         }
 
@@ -240,8 +247,13 @@ public static class Inlogscherm
                         // Reserveer
                         else if (selectedMenuItem == 2)
                         {
+
+                            Res.start_reservation();
+                            
+
                             MaakReservering.TijdSloten();
                             MaakReservering.KiesTijd();
+
                             Inlogscherm.Keuzemenu();
                         }
 
