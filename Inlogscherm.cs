@@ -1,4 +1,4 @@
-using Reservering;
+
 
 public static class Inlogscherm
 {
@@ -15,7 +15,7 @@ public static class Inlogscherm
     }
     public static void Keuzemenu()
     {
-        if (Account.CurrentUser != null && Account.CurrentUser.Email == null)
+        if (Account.CurrentUser != null && Account.CurrentUser.Email! == null)
         {
 
 
@@ -94,11 +94,9 @@ public static class Inlogscherm
                         else if (selectedMenuItem == 2)
                         {
 
-                            Res.start_reservation();
-                            
+                            Res.Hoelang.start_reservation();
 
-                            MaakReservering.TijdSloten();
-                            MaakReservering.KiesTijd();
+
 
                             Inlogscherm.Keuzemenu();
                         }
@@ -169,14 +167,14 @@ public static class Inlogscherm
 
                 Console.Clear();
                 Inlogscherm.Logo();
+
                 if (Account.CurrentUser.TussenVoegsel == "")
-                {
-                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.Achternaam} ");
-                }
+                    Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.Achternaam}");
                 else
-                {
                     Console.WriteLine($"Welkom bij restaurant De Rot, {Account.CurrentUser.Voornaam[0]}. {Account.CurrentUser.TussenVoegsel} {Account.CurrentUser.Achternaam}");
-                }
+
+
+
 
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -248,11 +246,10 @@ public static class Inlogscherm
                         else if (selectedMenuItem == 2)
                         {
 
-                            Res.start_reservation();
-                            
+                            Res.Hoelang.start_reservation();
 
-                            MaakReservering.TijdSloten();
-                            MaakReservering.KiesTijd();
+
+
 
                             Inlogscherm.Keuzemenu();
                         }

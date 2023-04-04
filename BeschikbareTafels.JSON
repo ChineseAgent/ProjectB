@@ -1,0 +1,1412 @@
+[
+    {
+        "day": 1,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 2,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 3,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 4,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 5,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 6,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 7,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 8,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 9,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 10,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 11,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 12,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 13,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 14,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 15,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 16,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 17,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 18,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 19,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 20,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 21,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 22,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 23,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 24,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 25,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 26,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 27,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 28,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 29,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    },
+    {
+        "day": 30,
+        "timeslots": [
+            {
+                "time": "10:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "12:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "15:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "17:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "20:00",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            },
+            {
+                "time": "22:30",
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
+                "table_free": true
+            }
+        ]
+    }
+]
