@@ -24,8 +24,10 @@ public static class Agenda
         Console.Write("Reserveren>");
         Console.ForegroundColor = ConsoleColor.Black;
         Console.BackgroundColor = ConsoleColor.White;
-        Console.Write("Datum>\n");
+        Console.Write("Datum>");
         Console.ResetColor();
+        Console.Write("Tijdslot>");
+        Console.Write("Aanmelden>\n");
         Console.WriteLine("");
         Console.WriteLine("    APRIL 2023\n");
         Console.WriteLine("ZA ZO MA DI WO DO VR");

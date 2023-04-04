@@ -955,8 +955,11 @@ public static class Res
             Console.Write("\nHoofdmenu>");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
-            Console.WriteLine("Reserveren>");
+            Console.Write("Reserveren>");
             Console.ResetColor();
+            Console.Write("Datum>");
+            Console.Write("Tijdslot>");
+            Console.Write("Aanmelden");
             Console.WriteLine("");
             // Hoe veel mensen
             Console.Write("\nHoeveel personen?: ");
@@ -980,8 +983,22 @@ public static class Res
                 }
                 else
                 {
-                    Console.WriteLine("Deze tijd is al bezet, kies een andere tijd");
-                    gekozen_Tijd_Int = KiesReserveringsTijd.KiesTijd();
+                    Console.Clear();
+                    Inlogscherm.Logo();
+                    Console.Write("\nHoofdmenu>");
+                    Console.Write("Reserveren>");
+                    Console.WriteLine("Datum>");
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("Tijdslot>");
+                    Console.ResetColor();
+                    Console.Write("Aanmelden");
+                    Console.WriteLine("");
+                    Console.WriteLine("\nDeze tijd is al bezet, kies een andere tijd");
+                    Console.WriteLine("Druk op een toets om het opnieuw te proberen");
+                    Console.ReadKey(true);
+
+
                 }
             }
             // Console.WriteLine(gekozen_Tijd);
@@ -1029,12 +1046,16 @@ public static class Res
                     Console.Clear();
                     Inlogscherm.Logo();
                     Console.Write("\nHoofdmenu>");
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("Reserveren>");
+                    Console.Write("Datum>");
+                    Console.Write("Tijdslot>");
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.WriteLine("Reserveren>");
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write("Aanmelden");
+
                     Console.ResetColor();
                     Console.WriteLine("");
-                    Console.WriteLine("U bent niet ingelogd, wilt u doorgaan als gast of inloggen?");
+                    Console.WriteLine("\nU bent niet ingelogd, wilt u doorgaan als gast of inloggen?");
                     for (int i = 0; i < menuItems.Length; i++)
                     {
                         if (i == selectedMenuItem)

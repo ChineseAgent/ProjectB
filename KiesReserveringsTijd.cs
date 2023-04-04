@@ -59,11 +59,11 @@ public static class KiesReserveringsTijd
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.Write("Tijdslot>");
                     Console.ResetColor();
+                    Console.Write("Aanmelden>\n");
                     Console.WriteLine("");
                     Console.WriteLine($"\nU heeft gekozen voor: {options[selectedOptionIndex]}\n");
                     Console.WriteLine("Druk een toets in om verder te gaan...");
                     Console.ReadKey();
-                    Console.WriteLine(selectedOptionIndex);
                     return selectedOptionIndex;
 
                 }
