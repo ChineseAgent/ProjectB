@@ -1145,7 +1145,7 @@ public static class Res
             }
             else
             {
-                Reservation res = new Reservation(1000, Account.CurrentUser.Voornaam, Account.CurrentUser.TussenVoegsel, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, Account.CurrentUser.Email, gekozen_Dag, gekozen_Tijd, res_personen, ReserveringsID);
+                Reservation res = new Reservation(Account.CurrentUser.CustomerId, Account.CurrentUser.Voornaam, Account.CurrentUser.TussenVoegsel, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, Account.CurrentUser.Email, gekozen_Dag, gekozen_Tijd, res_personen, ReserveringsID);
                 Save(res);
                 Console.ReadKey();
                 Inlogscherm.Keuzemenu();

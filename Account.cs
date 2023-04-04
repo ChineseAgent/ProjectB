@@ -31,6 +31,7 @@ public static class Account
         }
 
         // Email en ww vragen
+        Console.Clear();
         Inlogscherm.Logo();
         Console.Write("Hoofdmenu>");
         Console.ForegroundColor = ConsoleColor.Black;
