@@ -280,6 +280,7 @@ public static class Account
                         }
                         Console.WriteLine("Druk een toets in om terug te gaan...");
                         Console.ReadKey();
+                        Console.Clear();
 
 
                         break;

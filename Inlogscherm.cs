@@ -105,9 +105,11 @@ public static class Inlogscherm
                         // Login
                         else if (selectedMenuItem == 3)
                         {
-                            Inlogscherm.Loginscherm();
+                            Account.Login();
                             Inlogscherm.Keuzemenu();
                         }
+
+                        // Registreer
                         else if (selectedMenuItem == 4)
                         {
                             Console.Clear();
