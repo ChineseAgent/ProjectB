@@ -157,6 +157,7 @@ using System.Text.RegularExpressions;
 public static class Res
 {
     //Json bewaren
+    public static string gekozen_Tijd;
     public static List<Reservation> resList = new List<Reservation>();
     private static string jsonFilePath = "Reserveringen.json";
     //tafels
@@ -946,8 +947,6 @@ public static class Res
 
             //Menu variablen
 
-            string[] tijdItems = { "Octhend", "Middag", "Avond" };
-
 
 
             //vragen guest
@@ -972,7 +971,6 @@ public static class Res
             gekozen_Dag_Int = Agenda.DatePicker();
             string gekozen_Dag = $"2023-04-{gekozen_Dag_Int}";
 
-            string gekozen_Tijd = "";
             while (true)
             {
                 gekozen_Tijd_Int = KiesReserveringsTijd.KiesTijd();
@@ -986,7 +984,7 @@ public static class Res
                     gekozen_Tijd_Int = KiesReserveringsTijd.KiesTijd();
                 }
             }
-
+            // Console.WriteLine(gekozen_Tijd);
 
             switch (gekozen_Tijd_Int)
             {
@@ -1008,11 +1006,6 @@ public static class Res
                 case 5:
                     gekozen_Tijd = "22:30 - 00:30";
                     break;
-
-
-
-
-
             }
 
             string new_Id = Res_Id();
@@ -1076,13 +1069,23 @@ public static class Res
                         if (selectedMenuItem == 0)
                         {
                             // inloggen
+                            Console.Clear();
                             Account.Login();
-                            continue;
+                            Reservation res = new Reservation(Account.CurrentUser.CustomerId, Account.CurrentUser.Voornaam, Account.CurrentUser.TussenVoegsel, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, Account.CurrentUser.Email, gekozen_Dag, gekozen_Tijd, res_personen, ReserveringsID);
+                            Save(res);
+                            Console.ReadKey();
+                            Inlogscherm.Keuzemenu();
+                            break;
                         }
                         else if (selectedMenuItem == 1)
                         {
                             // Registreren
+                            Console.Clear();
                             Account.Registreer();
+                            Reservation res = new Reservation(Account.CurrentUser.CustomerId, Account.CurrentUser.Voornaam, Account.CurrentUser.TussenVoegsel, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, Account.CurrentUser.Email, gekozen_Dag, gekozen_Tijd, res_personen, ReserveringsID);
+                            Save(res);
+                            Console.ReadKey();
+                            Inlogscherm.Keuzemenu();
                             break;
                         }
                         else if (selectedMenuItem == 2)

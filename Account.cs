@@ -532,7 +532,7 @@ public static class Account
                     if (Res.CustomerId == Account.CurrentUser.CustomerId)
                     {
                         Console.WriteLine("");
-                        Console.WriteLine($"U heeft een reservering voor {Res.Hoeveel_Personen} personen in het tijdslot van {Res.gekozen_Tijd} op {Res.Gekozen_Dag}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+                        Console.WriteLine($"U heeft een reservering voor {Res.Hoeveel_Personen} personen in het tijdslot van {Res.Gekozen_Tijd} op {Res.Gekozen_Dag}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
                         reserveringen++;
                     }
                 }
@@ -560,7 +560,7 @@ public static class Account
                 if (Res.ReserveringsNummer == reserveringsnummergast)
                 {
                     Console.WriteLine("");
-                    Console.WriteLine($"U heeft een reservering voor {Res.Hoeveel_Personen} personen in het tijdslot van {Res.gekozen_Tijd} op {Res.Gekozen_Dag}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
+                    Console.WriteLine($"U heeft een reservering voor {Res.Hoeveel_Personen} personen in het tijdslot van {Res.Gekozen_Tijd} op {Res.Gekozen_Dag}.\nUw reserveringsnummer is {Res.ReserveringsNummer}");
                     reserveringen++;
                 }
             }

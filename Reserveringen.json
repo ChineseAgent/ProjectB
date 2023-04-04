@@ -1,1 +1,12 @@
-[{"CustomerId":1000,"CustomerName":"  ","Hoeveel_Personen":0,"Email":null,"gekozen_Tijd":null,"Gekozen_Dag":"2023-04-1","Telefoonnummer":null,"ReserveringsNummer":"RES-230367"},{"CustomerId":1000,"CustomerName":"tymo van rijn","Hoeveel_Personen":0,"Email":"admin","gekozen_Tijd":null,"Gekozen_Dag":"2023-04-3","Telefoonnummer":"0641011004","ReserveringsNummer":"RES-903837"},{"CustomerId":1000,"CustomerName":"tymo van rijn","Hoeveel_Personen":0,"Email":"admin","gekozen_Tijd":null,"Gekozen_Dag":"2023-04-4","Telefoonnummer":"0641011004","ReserveringsNummer":"RES-614322"},{"CustomerId":1000,"CustomerName":"Tymo van Rijn","Hoeveel_Personen":2,"Email":"tymovanrijn@gmail.com","gekozen_Tijd":null,"Gekozen_Dag":"2023-04-1","Telefoonnummer":"0641011004","ReserveringsNummer":"RES-120616"},{"CustomerId":1000,"CustomerName":"tymo van rijn","Hoeveel_Personen":2,"Email":"","gekozen_Tijd":null,"Gekozen_Dag":"2023-04-1","Telefoonnummer":"","ReserveringsNummer":"RES-977944"}]
+[
+    {
+        "CustomerId": 1,
+        "CustomerName": "tymo van rijn",
+        "Hoeveel_Personen": 6,
+        "Email": "admin",
+        "Gekozen_Tijd": "20:00 - 22:00",
+        "Gekozen_Dag": "2023-04-12",
+        "Telefoonnummer": "0641011004",
+        "ReserveringsNummer": "RES-672336"
+    }
+]

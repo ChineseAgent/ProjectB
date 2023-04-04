@@ -61,8 +61,13 @@ public static class KiesReserveringsTijd
                     Console.ResetColor();
                     Console.WriteLine("");
                     Console.WriteLine($"\nU heeft gekozen voor: {options[selectedOptionIndex]}\n");
+                    Console.WriteLine("Druk een toets in om verder te gaan...");
+                    Console.ReadKey();
+                    Console.WriteLine(selectedOptionIndex);
                     return selectedOptionIndex;
+
                 }
+                return selectedOptionIndex;
 
             }
         }
