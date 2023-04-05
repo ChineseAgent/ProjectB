@@ -3,129 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-/*public static class MaakReservering
-{
-    private static List<DateTime> tijdSloten = new List<DateTime>();
-    private static int selectedIndex = 0;
-    private static string jsonFilePath = "Reserveringen.json";
-
-    public static void TijdSloten()
-    {
-        DateTime currentTime = DateTime.Today.AddHours(8);
-        DateTime endTime = DateTime.Today.AddHours(23);
-
-        while (currentTime < endTime)
-        {
-            tijdSloten.Add(currentTime);
-            currentTime = currentTime.AddMinutes(120);
-            tijdSloten.Add(currentTime);
-            currentTime = currentTime.AddMinutes(30);
-        }
-
-        Console.WriteLine("Beschikbare tijdsloten:");
-
-        for (int i = 0; i < tijdSloten.Count; i += 2)
-        {
-            Console.WriteLine($"{i + 1}. {tijdSloten[i].ToString("HH:mm")} - {tijdSloten[i + 1].ToString("HH:mm")}");
-        }
-    }
-
-    public static void KiesTijd()
-    {
-        Console.Clear();
-        Console.WriteLine("Met hoeveel personen bent u?");
-        int hoeveelheid = int.Parse(Console.ReadLine());
-        ConsoleKey key;
-        do
-        {
-            Console.Clear();
-            Console.WriteLine("Selecteer een tijdslot:");
-            for (int i = 0; i < tijdSloten.Count; i += 2)
-            {
-                if (i == selectedIndex)
-                {
-                    Console.Write("> ");
-                }
-                Console.WriteLine($"{i + 1}. {tijdSloten[i].ToString("HH:mm")} - {tijdSloten[i + 1].ToString("HH:mm")}");
-            }
-
-            key = Console.ReadKey().Key;
-
-            switch (key)
-            {
-                case ConsoleKey.UpArrow:
-                    selectedIndex = Math.Max(0, selectedIndex - 2);
-                    break;
-                case ConsoleKey.DownArrow:
-                    selectedIndex = Math.Min(tijdSloten.Count - 2, selectedIndex + 2);
-                    break;
-            }
-        } while (key != ConsoleKey.Enter);
-
-        DateTime gekozenTijd = tijdSloten[selectedIndex];
-        Console.WriteLine($"\nJe hebt gekozen voor {gekozenTijd.ToString("HH:mm")} - {(gekozenTijd.AddMinutes(150)).ToString("HH:mm")}");
-        if (Account.CurrentUser.Email == null)
-        {
-            Console.WriteLine("Voer je gegevens in:");
-            Console.Write("Email: ");
-            string email = Console.ReadLine();
-            Console.Write("Voornaam: ");
-            string firstName = Console.ReadLine();
-            Console.Write("Tussenvoegsel: ");
-            string tussenvoegsel = Console.ReadLine();
-            Console.Write("Achternaam: ");
-            string lastName = Console.ReadLine();
-            Console.Write("Telefoonnummer: ");
-            string phoneNumber = Console.ReadLine();
-            SendEmail.SendReservationConfirmation(email, "Geen idee welke dag nog", gekozenTijd.ToString("HH:mm"));
-        }
-        else
-        {
-
-            Reservering NieuweReservering = new Reservering(Account.CurrentUser.CustomerId, Account.CurrentUser.Email, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, hoeveelheid, gekozenTijd.ToString("HH:mm"), ReserveringsCode());
-            StuurNaarJson(NieuweReservering);
-            SendEmail.SendReservationConfirmation(Account.CurrentUser.Email, "Geen idee welke dag nog", gekozenTijd.ToString("HH:mm"));
-        }
-
-    }
-
-    public static void StuurNaarJson(Reservering Reservering)
-    {
-        List<Reservering> Reserveringen;
-
-        if (File.Exists(jsonFilePath))
-        {
-            string jsonData = File.ReadAllText(jsonFilePath);
-            Reserveringen = JsonConvert.DeserializeObject<List<Reservering>>(jsonData);
-            if (Reserveringen == null)
-            {
-                Reserveringen = new List<Reservering>();
-            }
-        }
-        else
-        {
-            Reserveringen = new List<Reservering>();
-        }
-
-        Reserveringen.Add(Reservering);
-
-        string updatedData = JsonConvert.SerializeObject(Reserveringen);
-        File.WriteAllText(jsonFilePath, updatedData);
-        Console.WriteLine("Het maken van de reservering is gelukt! U wordt nu teruggebracht naar de beginpagina.");
-
-        Thread.Sleep(4000);
-        Inlogscherm.Keuzemenu();
-    }
-
-    public static string ReserveringsCode()
-    {
-        Random random = new Random();
-        int reservationNumber = random.Next(100000, 999999);
-        string prefix = "RES-";
-        string reservationCode = prefix + reservationNumber.ToString();
-        return reservationCode;
-    }
-}*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -145,6 +22,36 @@ namespace Reservering
 {
     public static class Res
     {
+         public class Item{
+
+     string Name = "check";
+            double PricePerUnit = 0;
+    int Quantity = 0;
+
+    public Item(string name,double pricePerUnit,int quantity)
+    {
+       Name = name;
+       PricePerUnit = pricePerUnit;
+       Quantity = quantity;
+
+    }
+
+    public double GetTotalPrice(double totalPrice)
+    {
+
+      totalPrice = PricePerUnit*Quantity;
+      return totalPrice;
+    }
+    public string getInfo(string info)
+    {
+                double totalPrice = GetTotalPrice(0);
+       info = Name+""+"total price:"+""+totalPrice;
+      
+       return info;
+    }
+
+}
+
         //Json bewaren
         public static List<Reservation> resList = new List<Reservation>();
         private static string jsonFilePath = "Reserveringen.json";
@@ -156,9 +63,10 @@ namespace Reservering
         public static int HoeveelPlek;
         public static List<Table> tables = new List<Table>();
         
-
+        
         class Guest
         {
+            
             public int CustomerId { get; set; }
             public string CustomerName { get; set; }
             public string Achternaam { get; set; }
@@ -560,9 +468,30 @@ namespace Reservering
             {
                 Customer_mail = customer_mail;
             }
+            public static string get_Mail(string email)
+            {
+                while (true)
+                {
 
+
+                    // Check if the email is valid using a regular expression
+                    string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                    if (!Regex.IsMatch(email, pattern))
+                    {
+                        Console.WriteLine("Ongeldig email adres.");
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+
+                    }
+
+
+                }
+                return email;
+            }
         }
-
         class Tables
         {
            public string chosen_Table {get;set;}
@@ -964,7 +893,7 @@ namespace Reservering
             string gekozen_Dag = welke_Dag.MenuDagen();
 
             string gekozen_Tijd = Hoelaat.MenuTijd(gekozen_Dag);
-
+            string user_mail = user_Mail.get_Mail(test_mail);
 
             int new_Id = Res_Id();
             bool test = false;
@@ -974,7 +903,7 @@ namespace Reservering
             Tables.Tables_people(res_personen,chosen_Table);
 
 
-            Guest x = new Guest(new_Id, res_naam, achternaam, test, time_limit, test_mail);
+            Guest x = new Guest(new_Id, res_naam, achternaam, test, time_limit, user_mail);
             Console.WriteLine(x.CustomerId + "");
             Console.WriteLine(x.CustomerName + "");
             Console.WriteLine(x.Achternaam + "");
@@ -986,7 +915,15 @@ namespace Reservering
             string reservationCode = prefix + new_Id.ToString();
 
             Reservation tt = new Reservation(new_Id, res_naam, test, gekozen_Tijd, gekozen_Dag, time_limit, test_mail, tel,res_personen,reservationCode);
-            Save(tt);
+            if(login == false)
+            { 
+            //geen user is ongelogt
+            }
+            else
+            {
+                Save(tt);
+            }
+            
 
 
 
@@ -1027,23 +964,7 @@ namespace Reservering
         return reservationNumber;
     }
 
-        static void Check_full()
-        {
-            int open_tafels = 10;
-            if (open_tafels >= 1)
-            {
-                open_tafels = open_tafels - 1;
-
-            }
-            else if (open_tafels == 0)
-            {
-                Console.WriteLine("Het restaurant is vol");
-            }
-
-
-
-
-        }
+        
 
     }
 
