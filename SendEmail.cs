@@ -11,7 +11,7 @@ Het moet precies deze line zijn, de parameters moeten natuurlijk wel anders
 maar de wait moet er achter staan, anders werkt het niet.*/
 
 
-public static class Send
+public static class SendEmail
 {
     public static async Task SendReservationConfirmation(string receiverEmail, string reservationDate, string reservationTime)
     {

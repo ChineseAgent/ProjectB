@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
+/*public static class MaakReservering
+{
+    private static List<DateTime> tijdSloten = new List<DateTime>();
+    private static int selectedIndex = 0;
+    private static string jsonFilePath = "Reserveringen.json";
 
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -36,21 +34,61 @@ namespace Reservering
 
     }
 
-    public double GetTotalPrice(double totalPrice)
-    {
+            Reservering NieuweReservering = new Reservering(Account.CurrentUser.CustomerId, Account.CurrentUser.Email, Account.CurrentUser.Achternaam, Account.CurrentUser.Telefoonnummer, hoeveelheid, gekozenTijd.ToString("HH:mm"), ReserveringsCode());
+            StuurNaarJson(NieuweReservering);
+            SendEmail.SendReservationConfirmation(Account.CurrentUser.Email, "Geen idee welke dag nog", gekozenTijd.ToString("HH:mm"));
+        }
 
-      totalPrice = PricePerUnit*Quantity;
-      return totalPrice;
-    }
-    public string getInfo(string info)
-    {
-                double totalPrice = GetTotalPrice(0);
-       info = Name+""+"total price:"+""+totalPrice;
-      
-       return info;
     }
 
-}
+    public static void StuurNaarJson(Reservering Reservering)
+    {
+
+        if (File.Exists(jsonFilePath))
+        {
+            string jsonData = File.ReadAllText(jsonFilePath);
+            Reserveringen = JsonConvert.DeserializeObject<List<Reservering>>(jsonData);
+            if (Reserveringen == null)
+            {
+                Reserveringen = new List<Reservering>();
+            }
+        }
+        else
+        {
+            Reserveringen = new List<Reservering>();
+        }
+
+        Reserveringen.Add(Reservering);
+
+        string updatedData = JsonConvert.SerializeObject(Reserveringen);
+        File.WriteAllText(jsonFilePath, updatedData);
+        Console.WriteLine("Het maken van de reservering is gelukt! U wordt nu teruggebracht naar de beginpagina.");
+
+        Thread.Sleep(4000);
+        Inlogscherm.Keuzemenu();
+    }
+
+    public static string ReserveringsCode()
+    {
+        Random random = new Random();
+        int reservationNumber = random.Next(100000, 999999);
+        string prefix = "RES-";
+        string reservationCode = prefix + reservationNumber.ToString();
+        return reservationCode;
+    }
+}*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
+
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+using System.IO;
 
         //Json bewaren
         public static List<Reservation> resList = new List<Reservation>();
@@ -972,4 +1010,6 @@ namespace Reservering
 
     }
 
+
+}
 
