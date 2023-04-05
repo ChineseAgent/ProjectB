@@ -5,7 +5,7 @@
             {
                 "time": "10:00",
                 "table_for_2": 5,
-                "table_for_4": 6,
+                "table_for_4": 5,
                 "table_for_6": 2,
                 "table_free": true
             },
@@ -1038,7 +1038,7 @@
         "timeslots": [
             {
                 "time": "10:00",
-                "table_for_2": 8,
+                "table_for_2": 7,
                 "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true

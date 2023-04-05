@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Threading;
+using System.Globalization;
 public class Menu
 {
     public List<Menu> listOfObjects = new List<Menu>();
@@ -45,7 +46,7 @@ public class Menu
     // De format voor elke item in het menu
     public string WriteMessage(Item i)
     {
-        return $"{i.Name}    ${i.Price}   {i.Vegan}" +
+        return $"{i.Name}    €{i.Price}   {i.Vegan}" +
                 $"\n{i.Omschrijving}\n";
     }
 
@@ -95,9 +96,6 @@ public class Menu
                 Console.WriteLine(WriteMessage(i));
             }
             Console.WriteLine($"\nLegenda:\n\u001b[32m\u2713\u001b[0m = Vegetarisch");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ResetColor();
             Console.WriteLine("\nDruk een toets in om terug te gaan naar het hoofdmenu...");
             Console.ReadKey();
         }
@@ -594,6 +592,6 @@ public class Menu
 | |  | |/ _ \ |  < / _` |/ _` | '__| __|
 | |__| |  __/ | . \ (_| | (_| | |  | |_ 
 |_____/ \___| |_|\_\__,_|\__,_|_|   \__|
-                                            
+
                                          ";
 }
