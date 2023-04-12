@@ -94,7 +94,7 @@ public static class Inlogscherm
                         else if (selectedMenuItem == 2)
                         {
 
-                            Res.Hoelang.start_reservation();
+                            Res.start_reservation();
 
 
 
@@ -250,7 +250,7 @@ public static class Inlogscherm
                         else if (selectedMenuItem == 2)
                         {
 
-                            Res.Hoelang.start_reservation();
+                            Res.start_reservation();
 
 
 

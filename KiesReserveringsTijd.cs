@@ -46,7 +46,7 @@ public static class KiesReserveringsTijd
             {
                 if (selectedOptionIndex == 6)
                 {
-                    Res.Hoelang.start_reservation();
+                    Res.start_reservation();
                 }
                 else
                 {
