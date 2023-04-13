@@ -867,8 +867,6 @@ public static class Res
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Write("Kies een tijdslot>");
                 Console.ResetColor();
-                Console.WriteLine("");
-
                 Console.Write("Aanmelden");
                 Console.WriteLine("");
                 Console.WriteLine("\nDeze tijd is al bezet, kies een andere tijd");

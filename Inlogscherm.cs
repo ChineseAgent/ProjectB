@@ -265,6 +265,13 @@ public static class Inlogscherm
                         {
                             Account.CurrentUser = new User();
                             Console.Clear();
+                            Inlogscherm.Logo();
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.BackgroundColor = ConsoleColor.White;
+                            Console.WriteLine("Keuzemenu>");
+                            Console.ResetColor();
+                            Console.WriteLine("");
                             Console.WriteLine("U bent uitgelogd.");
                             Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
                             Console.ReadKey();
