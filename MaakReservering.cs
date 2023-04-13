@@ -909,7 +909,7 @@ public static class Res
         // Tables.Tables_people(res_personen, chosen_Table);
         string ReserveringsID = "";
         ReserveringsID = Res_Id();
-
+        Console.Clear();
 
         if (Account.CurrentUser.Email == null)
         {
