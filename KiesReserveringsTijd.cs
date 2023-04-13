@@ -78,6 +78,7 @@ public static class KiesReserveringsTijd
         dag--;
         string jsonString = File.ReadAllText("BeschikbareTafels.json");
         List<Day> days = JsonConvert.DeserializeObject<List<Day>>(jsonString);
+
         if (aantalpersonen < 3)
         {
             if (days[dag].timeslots[index].table_for_2 > 0)
@@ -117,11 +118,56 @@ public static class KiesReserveringsTijd
                 return false;
             }
         }
-        else
+        else if (aantalpersonen < 11)
         {
-            return false;
-        }
+            // check if there are enough tables available to accommodate the reservation
+            int table_for_6 = days[dag].timeslots[index].table_for_6;
+            int table_for_4 = days[dag].timeslots[index].table_for_4;
+            int table_for_2 = days[dag].timeslots[index].table_for_2;
 
+            if (table_for_6 >= (aantalpersonen - 4))
+            {
+                // reserve a table for 6 and a table for 2
+                days[dag].timeslots[index].table_for_6--;
+                days[dag].timeslots[index].table_for_2--;
+                UpdateJson(days);
+                return true;
+            }
+            else if (table_for_4 >= (aantalpersonen - 2))
+            {
+                // reserve two tables for 4
+                days[dag].timeslots[index].table_for_4 -= 2;
+                UpdateJson(days);
+                return true;
+            }
+            else if (table_for_6 > 0 && table_for_4 > 0)
+            {
+                // reserve a table for 6 and a table for 4
+                days[dag].timeslots[index].table_for_6--;
+                days[dag].timeslots[index].table_for_4--;
+                UpdateJson(days);
+                return true;
+            }
+            else if (table_for_2 >= (aantalpersonen - 6))
+            {
+                // reserve three tables for 2
+                days[dag].timeslots[index].table_for_2 -= 3;
+                UpdateJson(days);
+                return true;
+            }
+            else if (table_for_6 > 1)
+            {
+                // reserve two tables for 6
+                days[dag].timeslots[index].table_for_6 -= 2;
+                UpdateJson(days);
+                return true;
+            }
+            else
+            {
+                // not enough tables available to accommodate the reservation
+            }
+        }
+        return false;
     }
 
 
@@ -130,6 +176,7 @@ public static class KiesReserveringsTijd
         string jsonString = JsonConvert.SerializeObject(days);
         File.WriteAllText("BeschikbareTafels.json", jsonString);
     }
+
     public class TimeSlot
     {
         public string time { get; set; }
