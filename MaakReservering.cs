@@ -797,8 +797,8 @@ public static class Res
             Console.BackgroundColor = ConsoleColor.White;
             Console.Write("Reserveren>");
             Console.ResetColor();
-            Console.Write("Datum>");
-            Console.Write("Tijdslot>");
+            Console.Write("Kies een datum>");
+            Console.Write("Kies een tijdslot>");
             Console.Write("Aanmelden");
             Console.WriteLine("");
             Console.WriteLine("Voer 'q' in om terug te gaan naar het hoofdmenu");
@@ -861,11 +861,14 @@ public static class Res
                 Inlogscherm.Logo();
                 Console.Write("\nHoofdmenu>");
                 Console.Write("Reserveren>");
-                Console.WriteLine("Datum>");
+                Console.Write("Kies een datum>");
+
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("Tijdslot>");
+                Console.Write("Kies een tijdslot>");
                 Console.ResetColor();
+                Console.WriteLine("");
+
                 Console.Write("Aanmelden");
                 Console.WriteLine("");
                 Console.WriteLine("\nDeze tijd is al bezet, kies een andere tijd");
@@ -921,8 +924,8 @@ public static class Res
                 Inlogscherm.Logo();
                 Console.Write("\nHoofdmenu>");
                 Console.Write("Reserveren>");
-                Console.Write("Datum>");
-                Console.Write("Tijdslot>");
+                Console.Write("Kies een datum>");
+                Console.Write("Kies een tijdslot>");
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Write("Aanmelden");
@@ -990,9 +993,12 @@ public static class Res
                         Console.Clear();
                         Inlogscherm.Logo();
                         Console.Write("\nHoofdmenu>");
-                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write("Reserveren>");
+                        Console.Write("Kies een datum>");
+                        Console.Write("Kies een tijdslot>");
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.WriteLine("Reserveren>");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write("Aanmelden");
                         Console.ResetColor();
                         Console.WriteLine("");
                         Console.WriteLine("\nVoer uw gegevens in , * is verplicht");
@@ -1115,6 +1121,16 @@ public static class Res
 
         string updatedData = JsonConvert.SerializeObject(Reserveringen);
         File.WriteAllText(jsonFilePath, updatedData);
+        Inlogscherm.Logo();
+        Console.Write("\nHoofdmenu>");
+        Console.Write("Reserveren>");
+        Console.Write("Kies een datum>");
+        Console.Write("Kies een tijdslot>");
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.Write("Aanmelden");
+        Console.ResetColor();
+        Console.WriteLine("");
         Console.WriteLine($"Het maken van de reservering is gelukt! Uw reserveringscode is: {Reservering.ReserveringsNummer}\n");
         Console.WriteLine("Druk een toets in om terug te gaan naar het hoofdmenu...");
         Console.ReadKey();

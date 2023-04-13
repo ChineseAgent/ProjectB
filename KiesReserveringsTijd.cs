@@ -15,11 +15,12 @@ public static class KiesReserveringsTijd
             Inlogscherm.Logo();
             Console.Write("\nHoofdmenu>");
             Console.Write("Reserveren>");
-            Console.Write("Datum>");
+            Console.Write("Kies een datum>");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
-            Console.Write("Tijdslot>");
+            Console.Write("Kies een tijdslot>");
             Console.ResetColor();
+            Console.Write("Aanmelden");
             Console.WriteLine("");
             Console.WriteLine("\nGebruik de puiltjes toetsen om een keuze te maken:\n");
             for (int i = 0; i < options.Length; i++)
@@ -54,12 +55,12 @@ public static class KiesReserveringsTijd
                     Inlogscherm.Logo();
                     Console.Write("\nHoofdmenu>");
                     Console.Write("Reserveren>");
-                    Console.Write("Datum>");
+                    Console.Write("Kies een datum>");
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.BackgroundColor = ConsoleColor.White;
-                    Console.Write("Tijdslot>");
+                    Console.Write("Kies een tijdslot>");
                     Console.ResetColor();
-                    Console.Write("Aanmelden>\n");
+                    Console.Write("Aanmelden\n");
                     Console.WriteLine("");
                     Console.WriteLine($"\nU heeft gekozen voor: {options[selectedOptionIndex]}\n");
                     Console.WriteLine("Druk een toets in om verder te gaan...");
@@ -128,17 +129,31 @@ public static class KiesReserveringsTijd
             if (table_for_6 >= (aantalpersonen - 4))
             {
                 // reserve a table for 6 and a table for 2
-                days[dag].timeslots[index].table_for_6--;
-                days[dag].timeslots[index].table_for_2--;
-                UpdateJson(days);
-                return true;
+                if (table_for_2 > 0)
+                {
+                    days[dag].timeslots[index].table_for_6--;
+                    days[dag].timeslots[index].table_for_2--;
+                    UpdateJson(days);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else if (table_for_4 >= (aantalpersonen - 2))
             {
                 // reserve two tables for 4
-                days[dag].timeslots[index].table_for_4 -= 2;
-                UpdateJson(days);
-                return true;
+                if (table_for_4 >= 2)
+                {
+                    days[dag].timeslots[index].table_for_4 -= 2;
+                    UpdateJson(days);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else if (table_for_6 > 0 && table_for_4 > 0)
             {
@@ -151,24 +166,41 @@ public static class KiesReserveringsTijd
             else if (table_for_2 >= (aantalpersonen - 6))
             {
                 // reserve three tables for 2
-                days[dag].timeslots[index].table_for_2 -= 3;
-                UpdateJson(days);
-                return true;
+                if (table_for_2 >= 3)
+                {
+                    days[dag].timeslots[index].table_for_2 -= 3;
+                    UpdateJson(days);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else if (table_for_6 > 1)
             {
                 // reserve two tables for 6
-                days[dag].timeslots[index].table_for_6 -= 2;
-                UpdateJson(days);
-                return true;
+                if (table_for_6 >= 2)
+                {
+                    days[dag].timeslots[index].table_for_6 -= 2;
+                    UpdateJson(days);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 // not enough tables available to accommodate the reservation
+                return false;
             }
         }
         return false;
     }
+
+
 
 
     private static void UpdateJson(List<Day> days)
