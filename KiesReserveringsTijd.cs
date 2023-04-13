@@ -101,6 +101,12 @@ public static class KiesReserveringsTijd
                 UpdateJson(days);
                 return true;
             }
+            else if (days[dag].timeslots[index].table_for_2 > 1)
+            {
+
+                days[dag].timeslots[index].table_for_2 -= 2;
+                return true;
+            }
             else
             {
                 return false;
@@ -114,6 +120,17 @@ public static class KiesReserveringsTijd
                 UpdateJson(days);
                 return true;
             }
+            else if (days[dag].timeslots[index].table_for_4 > 0 && days[dag].timeslots[index].table_for_2 > 0)
+            {
+                days[dag].timeslots[index].table_for_4--;
+                days[dag].timeslots[index].table_for_2--;
+                return true;
+            }
+            else if (days[dag].timeslots[index].table_for_2 > 2)
+            {
+                days[dag].timeslots[index].table_for_2 -= 3;
+                return true;
+            }
             else
             {
                 return false;
@@ -121,6 +138,40 @@ public static class KiesReserveringsTijd
         }
         else if (aantalpersonen < 11)
         {
+            if (aantalpersonen == 8)
+            {
+                if (days[dag].timeslots[index].table_for_4 > 1)
+                {
+                    days[dag].timeslots[index].table_for_4 -= 2;
+                    UpdateJson(days);
+                    return true;
+                }
+                else if (days[dag].timeslots[index].table_for_4 == 1 && days[dag].timeslots[index].table_for_2 > 1)
+                {
+                    days[dag].timeslots[index].table_for_4 -= 1;
+                    days[dag].timeslots[index].table_for_2 -= 2;
+                    UpdateJson(days);
+                    return true;
+                }
+                else if (days[dag].timeslots[index].table_for_6 > 0 && days[dag].timeslots[index].table_for_2 > 0)
+                {
+                    days[dag].timeslots[index].table_for_6 -= 1;
+                    days[dag].timeslots[index].table_for_2 -= 1;
+                    UpdateJson(days);
+                    return true;
+                }
+                else if (days[dag].timeslots[index].table_for_4 == 0 && days[dag].timeslots[index].table_for_6 == 0 && days[dag].timeslots[index].table_for_2 > 3)
+                {
+                    days[dag].timeslots[index].table_for_2 -= 4;
+                    UpdateJson(days);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
             // check if there are enough tables available to accommodate the reservation
             int table_for_6 = days[dag].timeslots[index].table_for_6;
             int table_for_4 = days[dag].timeslots[index].table_for_4;

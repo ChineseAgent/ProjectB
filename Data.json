@@ -1,1 +1,67 @@
-[{"listOfObjects":null,"Voorgerecht":[{"Name":"Soep van de dag","Price":7.9,"Omschrijving":"Voor meer informatie vraag aan een ober.","Vegan":null}],"Hoofdgerecht":[{"Name":"Vis van de dag","Price":15.5,"Omschrijving":"Voor meer informatie vraag aan een ober.","Vegan":null},{"Name":"Vlees van de dag","Price":15.5,"Omschrijving":"Voor meer informatie vraag aan een ober.","Vegan":null}],"Nagerecht":[{"Name":"Cheesecake","Price":6.0,"Omschrijving":"Stukje Cheesecake","Vegan":null}],"Koffie_Thee":[{"Name":"Koffie ","Price":3.1,"Omschrijving":"Bakje koffie met natuurlijke koffie bonen.","Vegan":null}],"Fris_Sappen":[{"Name":"Cola","Price":3.0,"Omschrijving":"Glas cola met ijsblokjes","Vegan":null}],"BierVanDeTap":[{"Name":"Hertog","Price":3.0,"Omschrijving":"Klein biertje","Vegan":null}],"Wijn":[{"Name":"Primitivo","Price":6.9,"Omschrijving":"Heerlijk rood wijntje met een natuurlijke lichte smaak in je keel.","Vegan":null}]}]
+[
+    {
+        "listOfObjects": null,
+        "Voorgerecht": [
+            {
+                "Name": "Soep van de dag",
+                "Price": 7.9,
+                "Omschrijving": "Voor meer informatie vraag aan een ober.",
+                "Vegan": null
+            }
+        ],
+        "Hoofdgerecht": [
+            {
+                "Name": "Vis van de dag",
+                "Price": 15.5,
+                "Omschrijving": "Voor meer informatie vraag aan een ober.",
+                "Vegan": null
+            },
+            {
+                "Name": "Vlees van de dag",
+                "Price": 15.5,
+                "Omschrijving": "Voor meer informatie vraag aan een ober.",
+                "Vegan": null
+            }
+        ],
+        "Nagerecht": [
+            {
+                "Name": "Cheesecake",
+                "Price": 6.0,
+                "Omschrijving": "Stukje Cheesecake",
+                "Vegan": null
+            }
+        ],
+        "Koffie_Thee": [
+            {
+                "Name": "Koffie ",
+                "Price": 3.1,
+                "Omschrijving": "Bakje koffie met natuurlijke koffie bonen.",
+                "Vegan": null
+            }
+        ],
+        "Fris_Sappen": [
+            {
+                "Name": "Cola",
+                "Price": 3.0,
+                "Omschrijving": "Glas cola met ijsblokjes",
+                "Vegan": null
+            }
+        ],
+        "BierVanDeTap": [
+            {
+                "Name": "Hertog",
+                "Price": 3.0,
+                "Omschrijving": "Klein biertje",
+                "Vegan": null
+            }
+        ],
+        "Wijn": [
+            {
+                "Name": "Primitivo",
+                "Price": 6.9,
+                "Omschrijving": "Heerlijk rood wijntje met een natuurlijke lichte smaak in je keel.",
+                "Vegan": null
+            }
+        ]
+    }
+]

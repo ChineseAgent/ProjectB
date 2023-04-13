@@ -32,6 +32,7 @@ public class User
         Postcode = postcode;
         CustomerId = customerid;
         Admin = admin;
+        CustomerId++;
     }
 
     public User()
