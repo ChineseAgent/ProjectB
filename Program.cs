@@ -5,6 +5,7 @@ public class Program
     public static void Main()
     {
 
-        Inlogscherm.Keuzemenu();
+        // Inlogscherm.Keuzemenu();
+        TableView.Tafelindeling();
     }
 }

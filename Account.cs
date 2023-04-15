@@ -282,9 +282,10 @@ public static class Account
                         Console.WriteLine("Druk een toets in om terug te gaan...");
                         Console.ReadKey();
                         Console.Clear();
-
-
+                        Inlogscherm.Keuzemenu();
                         break;
+
+
 
 
                     }
@@ -293,7 +294,6 @@ public static class Account
 
             if (CheckOfIngelogd())
             {
-
                 break;
             }
             else
@@ -304,11 +304,6 @@ public static class Account
                 {
                     break;
                 }
-                else
-                {
-                    Account.ProbeerOpnieuwInTeLoggen();
-                }
-
             }
 
 

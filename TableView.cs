@@ -52,66 +52,21 @@ public static class TableView
 
     public static void Tafelindeling()
     {
-        Console.WriteLine("----- Tafelindeling -----");
-        Console.WriteLine("2-persoons tafels:");
-        Console.WriteLine("+------+  +------+  +------+  +------+  +------+  +------+  +------+  +------+");
-
-        for (int i = 0; i < 8; i++)
-        {
-            if (tables[i].Beschikbaar)
-            {
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|");
-                Console.ResetColor();
-            }
-        }
-
-        Console.WriteLine("\n+------+  +------+  +------+  +------+  +------+  +------+  +------+  +------+");
-        Console.WriteLine();
-        Console.WriteLine("4-persoons tafels:");
-        Console.WriteLine("+--------+  +--------+  +--------+  +--------+  +--------+");
-
-        for (int i = 8; i < 13; i++)
-        {
-            if (tables[i].Beschikbaar)
-            {
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|   ");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|");
-                Console.ResetColor();
-            }
-        }
-
-        Console.WriteLine("\n+--------+  +--------+  +--------+  +--------+  +--------+");
-        Console.WriteLine();
-        Console.WriteLine("6-persoons tafels:");
-        Console.WriteLine("+----------+  +----------+");
-
-        for (int i = 13; i < 15; i++)
-        {
-            if (tables[i].Beschikbaar)
-            {
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|    ");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write($"| Tafel{i.ToString().PadLeft(2, ' ')}|");
-                Console.ResetColor();
-            }
-        }
-
-        Console.WriteLine("\n+----------+  +----------+");
-        Console.WriteLine();
-        Console.WriteLine("Overige informatie:");
-        Console.WriteLine("- Er zijn in totaal 8 2-persoons tafels, 5 4-persoons tafels en 2 6-persoons tafels.");
-        Console.WriteLine("- Tafels worden aangeduid met een uniek ID-nummer van 0 t/m 16.");
+        Console.Clear();
+        Inlogscherm.Logo();
+        Console.Write("Hoofdmenu>");
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.WriteLine("Plattegrond>");
+        Console.WriteLine("");
+        Console.ResetColor();
+        string filePath = "Tafelindeling.txt";
+        string text = System.IO.File.ReadAllText(filePath);
+        Console.Write(text);
+        Console.WriteLine("");
+        Console.WriteLine("\nDruk een toets in om terug te gaan naar het hoofdmenu.");
+        Console.ReadKey();
+        Inlogscherm.Keuzemenu();
     }
+
 }

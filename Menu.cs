@@ -304,8 +304,17 @@ public class Menu
         // Loop until the user selects an option
         while (!done)
         {
+
             // Print the menu
             Console.Clear();
+            Inlogscherm.Logo();
+            Console.WriteLine("");
+            Console.Write("Hoofdmenu>");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine("De kaart>");
+            Console.WriteLine("");
+            Console.ResetColor();
             for (int i = 0; i < menuItems.Length; i++)
             {
                 if (i == selectedMenuItem)

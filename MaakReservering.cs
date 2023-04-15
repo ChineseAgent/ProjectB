@@ -801,7 +801,7 @@ public static class Res
             Console.Write("Kies een tijdslot>");
             Console.Write("Aanmelden");
             Console.WriteLine("");
-            Console.WriteLine("Voer 'q' in om terug te gaan naar het hoofdmenu");
+            Console.WriteLine("\nVoer 'q' in om terug te gaan naar het hoofdmenu");
             Console.Write("\nHoeveel personen?: ");
 
             string res_personenstr = Console.ReadLine();
