@@ -1075,16 +1075,6 @@ public static class Res
             Console.ReadKey();
             Inlogscherm.Keuzemenu();
         }
-
-
-
-
-
-
-
-
-
-
     }
     public static void Save(Reservation Reservering)
     {
