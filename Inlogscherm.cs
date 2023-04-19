@@ -95,9 +95,6 @@ public static class Inlogscherm
                         {
 
                             Res.start_reservation();
-
-
-
                             Inlogscherm.Keuzemenu();
                         }
 

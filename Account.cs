@@ -94,7 +94,7 @@ public static class Account
 
         Console.ForegroundColor = ConsoleColor.White;
         Console.BackgroundColor = ConsoleColor.Black;
-        Console.WriteLine("\nMinimaal 6 tekens, maximaal 15");
+        Console.WriteLine("\nMinimaal 6 tekens, maximaal 10");
         Console.ResetColor();
 
         while (passwordnotokay == true)
@@ -411,10 +411,535 @@ public static class Account
 
                 }
             }
+            if (password.Length == 8)
+            {
+                islowercheck = false;
+                isuppercheck = false;
+                isdigit = false;
+
+                if (password == "q")
+                {
+                    Inlogscherm.Keuzemenu();
+                }
+
+                if (isuppercheck == false && islowercheck == false && isdigit == false)
+                {
+                    islowercheck = Char.IsLower(password, 0);
+
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 1);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 2);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 3);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 4);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 5);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 6);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 7);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen kleine letter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isuppercheck = Char.IsUpper(password, 0);
+
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 1);
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 2);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 3);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 4);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 5);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 6);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 7);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen hoofdletter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isdigit = Char.IsDigit(password, 0);
+
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 1);
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 2);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 3);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 4);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 5);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 6);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 7);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen cijfer.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+                    else if (isuppercheck == true && islowercheck == true && isdigit == true)
+                    {
+                        passwordnotokay = false;
+                        islowercheck = true;
+                        isdigit = true;
+                    }
+
+                }
+            }
+            if (password.Length == 9)
+            {
+                islowercheck = false;
+                isuppercheck = false;
+                isdigit = false;
+
+                if (password == "q")
+                {
+                    Inlogscherm.Keuzemenu();
+                }
+
+                if (isuppercheck == false && islowercheck == false && isdigit == false)
+                {
+                    islowercheck = Char.IsLower(password, 0);
+
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 1);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 2);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 3);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 4);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 5);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 6);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 7);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 8);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen kleine letter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isuppercheck = Char.IsUpper(password, 0);
+
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 1);
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 2);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 3);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 4);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 5);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 6);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 7);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsDigit(password, 8);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen hoofdletter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isdigit = Char.IsDigit(password, 0);
+
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 1);
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 2);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 3);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 4);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 5);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 6);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 7);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 8);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen cijfer.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+                    else if (isuppercheck == true && islowercheck == true && isdigit == true)
+                    {
+                        passwordnotokay = false;
+                        islowercheck = true;
+                        isdigit = true;
+                    }
+
+                }
+            }
+            if (password.Length == 10)
+            {
+                islowercheck = false;
+                isuppercheck = false;
+                isdigit = false;
+
+                if (password == "q")
+                {
+                    Inlogscherm.Keuzemenu();
+                }
+
+                if (isuppercheck == false && islowercheck == false && isdigit == false)
+                {
+                    islowercheck = Char.IsLower(password, 0);
+
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 1);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 2);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 3);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 4);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 5);
+
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 6);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 7);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 8);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        islowercheck = Char.IsLower(password, 9);
+                        counter++;
+                    }
+                    if (islowercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen kleine letter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isuppercheck = Char.IsUpper(password, 0);
+
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 1);
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 2);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 3);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 4);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 5);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 6);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsUpper(password, 7);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsDigit(password, 8);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        isuppercheck = Char.IsDigit(password, 9);
+                        counter++;
+                    }
+                    if (isuppercheck == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen hoofdletter.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+
+                    isdigit = Char.IsDigit(password, 0);
+
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 1);
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 2);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 3);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 4);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 5);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 6);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 7);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 8);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        isdigit = Char.IsDigit(password, 9);
+                        counter++;
+                    }
+                    if (isdigit == false)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.Write("\nWachtwoord bevat geen cijfer.");
+                        counter++;
+                        Console.ResetColor();
+                    }
+                    else if (isuppercheck == true && islowercheck == true && isdigit == true)
+                    {
+                        passwordnotokay = false;
+                        islowercheck = true;
+                        isdigit = true;
+                    }
+
+                }
+            }
         }
-
-
-
 
         while (password != password2)
         {
@@ -619,10 +1144,9 @@ public static class Account
                         Console.WriteLine("Druk een toets in om terug te gaan...");
                         Console.ReadKey();
                         Console.Clear();
-                        Inlogscherm.Keuzemenu();
+
+
                         break;
-
-
 
 
                     }
@@ -631,6 +1155,7 @@ public static class Account
 
             if (CheckOfIngelogd())
             {
+
                 break;
             }
             else
@@ -641,6 +1166,11 @@ public static class Account
                 {
                     break;
                 }
+                else
+                {
+                    Account.ProbeerOpnieuwInTeLoggen();
+                }
+
             }
 
 
