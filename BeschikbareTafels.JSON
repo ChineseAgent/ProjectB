@@ -4,15 +4,15 @@
         "timeslots": [
             {
                 "time": "10:00",
-                "table_for_2": 2,
-                "table_for_4": 0,
-                "table_for_6": 0,
+                "table_for_2": 8,
+                "table_for_4": 6,
+                "table_for_6": 2,
                 "table_free": true
             },
             {
                 "time": "12:30",
                 "table_for_2": 8,
-                "table_for_4": 4,
+                "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
             },
@@ -39,7 +39,7 @@
             },
             {
                 "time": "22:30",
-                "table_for_2": 7,
+                "table_for_2": 8,
                 "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
@@ -381,7 +381,7 @@
             {
                 "time": "10:00",
                 "table_for_2": 8,
-                "table_for_4": 5,
+                "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
             },
@@ -427,7 +427,7 @@
         "timeslots": [
             {
                 "time": "10:00",
-                "table_for_2": 7,
+                "table_for_2": 8,
                 "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
@@ -456,7 +456,7 @@
             {
                 "time": "20:00",
                 "table_for_2": 8,
-                "table_for_4": 5,
+                "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
             },
@@ -495,7 +495,7 @@
             },
             {
                 "time": "17:30",
-                "table_for_2": 7,
+                "table_for_2": 8,
                 "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true
@@ -1038,7 +1038,7 @@
         "timeslots": [
             {
                 "time": "10:00",
-                "table_for_2": 7,
+                "table_for_2": 8,
                 "table_for_4": 6,
                 "table_for_6": 2,
                 "table_free": true

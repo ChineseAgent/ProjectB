@@ -105,6 +105,7 @@ public static class KiesReserveringsTijd
             {
 
                 days[dag].timeslots[index].table_for_2 -= 2;
+                UpdateJson(days);
                 return true;
             }
             else
@@ -124,11 +125,13 @@ public static class KiesReserveringsTijd
             {
                 days[dag].timeslots[index].table_for_4--;
                 days[dag].timeslots[index].table_for_2--;
+                UpdateJson(days);
                 return true;
             }
             else if (days[dag].timeslots[index].table_for_2 > 2)
             {
                 days[dag].timeslots[index].table_for_2 -= 3;
+                UpdateJson(days);
                 return true;
             }
             else
@@ -171,7 +174,29 @@ public static class KiesReserveringsTijd
                     return false;
                 }
             }
-
+            if (aantalpersonen == 9)
+            {
+                if (days[dag].timeslots[index].table_for_6 > 1 && days[dag].timeslots[index].table_for_6 > 1)
+                {
+                    days[dag].timeslots[index].table_for_4 -= 1;
+                    days[dag].timeslots[index].table_for_6 -= 1;
+                    UpdateJson(days);
+                    return true;
+                }
+                else if (days[dag].timeslots[index].table_for_2 > 2 && days[dag].timeslots[index].table_for_4 > 1)
+                {
+                    days[dag].timeslots[index].table_for_4 -= 1;
+                    days[dag].timeslots[index].table_for_2 -= 3;
+                    UpdateJson(days);
+                    return true;
+                }
+                else if (days[dag].timeslots[index].table_for_2 > 4)
+                {
+                    days[dag].timeslots[index].table_for_2 -= 5;
+                    UpdateJson(days);
+                    return true;
+                }
+            }
             // check if there are enough tables available to accommodate the reservation
             int table_for_6 = days[dag].timeslots[index].table_for_6;
             int table_for_4 = days[dag].timeslots[index].table_for_4;

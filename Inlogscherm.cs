@@ -20,7 +20,7 @@ public static class Inlogscherm
 
 
             // Define the menu items
-            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Mijn reservering", "Afsluiten" };
+            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Login", "Registreren", "Mijn reservering", "Plattegrond restaurant", "Afsluiten" };
 
             // Set the default selection
             int selectedMenuItem = 0;
@@ -36,7 +36,7 @@ public static class Inlogscherm
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;
-                Console.WriteLine("Keuzemenu>");
+                Console.WriteLine("Hoofdmenu>");
                 Console.WriteLine("");
                 Console.ResetColor();
                 Console.WriteLine("Maak uw keuze:");
@@ -126,6 +126,11 @@ public static class Inlogscherm
 
                         else if (selectedMenuItem == 6)
                         {
+                            TableView.Tafelindeling();
+                        }
+
+                        else if (selectedMenuItem == 7)
+                        {
                             // Afsluiten
                             Console.Clear();
                             for (int b = 0; b < 1; b++)
@@ -158,7 +163,7 @@ public static class Inlogscherm
 
 
             // Define the menu items
-            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Log uit", "Mijn gegevens", "Afsluiten" };
+            string[] menuItems = { "Informatie", "De kaart", "Reserveer", "Log uit", "Mijn gegevens", "Plattegrond restaurant", "Afsluiten" };
 
             // Set the default selection
             int selectedMenuItem = 0;
@@ -183,7 +188,7 @@ public static class Inlogscherm
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;
-                Console.WriteLine("Keuzemenu>");
+                Console.WriteLine("Hoofdmenu>");
                 Console.ResetColor();
                 Console.WriteLine("");
                 Console.WriteLine("Maak uw keuze:");
@@ -269,7 +274,7 @@ public static class Inlogscherm
                             Console.WriteLine("");
                             Console.ForegroundColor = ConsoleColor.Black;
                             Console.BackgroundColor = ConsoleColor.White;
-                            Console.WriteLine("Keuzemenu>");
+                            Console.WriteLine("Hoofdmenu>");
                             Console.ResetColor();
                             Console.WriteLine("");
                             Console.WriteLine("U bent uitgelogd.");
@@ -288,7 +293,13 @@ public static class Inlogscherm
                             }
 
                         }
+
                         else if (selectedMenuItem == 5)
+                        {
+                            TableView.Tafelindeling();
+                        }
+
+                        else if (selectedMenuItem == 6)
                         {
                             // Afsluiten
                             Console.Clear();
